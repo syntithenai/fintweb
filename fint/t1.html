@@ -1,0 +1,41 @@
+<html>
+<head>
+<link rel="stylesheet" href="lib/jquery-ui/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="lib/jquery.quickdb.css" type="text/css" media="all" />
+<dlink rel="stylesheet" href="fint.css" type="text/css" media="all" />
+<script src="lib/jquery.js" type="text/javascript"></script>
+<script src="lib/jquery-ui.js" type="text/javascript"></script>
+<script src="lib/WebSQL.min.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.model.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.view.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.controller.js" type="text/javascript"></script>
+<script src="metadata/accounts.js" type="text/javascript"></script>
+<!-- include svg edit iframe embed lib -->
+<script type="text/javascript" src="lib/svg-edit/embedapi.js"></script>
+<!-- include RTE -->
+<link type="text/css" rel="stylesheet" href="lib/rte/jquery.rte.css" />
+<script type="text/javascript" src="lib/rte/jquery.rte.js"></script>
+<script type="text/javascript" src="lib/rte/jquery.rte.tb.js"></script>
+<!-- include jquery.sheet -->
+<link rel="stylesheet" type="text/css" href="lib/jquery.sheet/jquery.sheet.css" />
+<script type="text/javascript" src="lib/jquery.sheet/jquery.sheet.js"></script>
+<script type="text/javascript" src="lib/jquery.sheet/jquery.sheet.menus.js"></script>
+<script type="text/javascript">
+		$.sheet.preLoad('lib/jquery.sheet/');	
+</script>
+
+
+<script>
+$(document).ready(function() {
+	$('.activatable').quickDB();
+});
+</script>
+</head>
+<body>
+<div id='transactionmanagerhome' data-table='accounts' class='activatable'data-init='new' data-rowid='1' ></div>
+
+</body>
+</html>
+
+

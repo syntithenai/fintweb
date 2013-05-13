@@ -1,0 +1,94 @@
+<script src="lib/jquery.js" type="text/javascript"></script>
+
+<div id='editable' >this is the stuff to edit</div>
+
+fffffff
+
+<script>
+/*<input type="text"  x-webkit-speech>
+
+function inputChange(e) {
+  if (e.results) { // e.type == 'webkitspeechchange'
+    for (var i = 0, result; result = e.results[i]; ++i) {
+      console.log(result.utterance, result.confidence);
+    }
+	document.log(input);
+    console.log('Best result: ' + this.value);
+  }
+}
+
+var input = document.querySelector('[x-webkit-speech]');
+input.addEventListener('change', inputChange, false);
+input.addEventListener('webkitspeechchange', inputChange, false);
+//-------------------
+
+
+
+*/
+
+
+
+var editable = $('#editable');
+
+editable.bind( 'mouseout', function () {
+	console.log('blur');
+  // lame that we're hooking the blur event
+  //localStorage.setItem('contenteditable', this.innerHTML);
+  document.designMode = 'off';
+});
+
+editable.bind('mouseover', function () {
+console.log('focus');
+  document.designMode = 'on';
+});
+
+
+/*
+
+//--------------------------
+
+(function ($) {
+  $.fn.get_selection = function () {
+    var e = this.get(0);
+    //Mozilla and DOM 3.0
+    if('selectionStart' in e) {
+      var l = e.selectionEnd - e.selectionStart;
+      return { start: e.selectionStart, end: e.selectionEnd, length: l, text: e.value.substr(e.selectionStart, l) };
+    }
+  //Browser not supported
+    else return { start: e.value.length, end: e.value.length, length: 0, text: '' };
+  };
+
+  $.fn.set_selection = function (start_pos,end_pos) {
+    var e = this.get(0);
+    //Mozilla and DOM 3.0
+    if('selectionStart' in e) {
+      e.focus();
+      e.selectionStart = start_pos;
+      e.selectionEnd = end_pos;
+    }
+   return this.get_selection();
+  };
+
+  $.fn.replace_selection = function (replace_str) {
+    var e = this.get(0);
+    selection = this.get_selection();
+    var start_pos = selection.start;
+    var end_pos = start_pos + replace_str.length;
+    e.value = e.value.substr(0, start_pos) + replace_str + e.value.substr(selection.end, e.value.length);
+    this.set_selection(start_pos,end_pos);
+    return {start: start_pos, end: end_pos, length: replace_str.length, text: replace_str};
+  };
+
+  $.fn.wrap_selection = function (left_str, right_str, sel_offset, sel_length) {
+    var the_sel_text = this.get_selection().text;
+    var selection =  this.replace_selection(left_str + the_sel_text + right_str );
+    if(sel_offset !== undefined && sel_length !== undefined) 
+      selection = this.set_selection(selection.start +  sel_offset, selection.start +  sel_offset + sel_length);
+    else if(the_sel_text == '') 
+      selection = this.set_selection(selection.start + left_str.length, selection.start + left_str.length);
+    return selection;
+  };
+}(jQuery));
+*/
+</script>

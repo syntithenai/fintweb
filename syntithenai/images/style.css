@@ -1,0 +1,62 @@
+div.contentblock  {
+        position: absolute;
+  border: 1px solid black;
+  background-color: #EFEFEF;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  font-size: medium;
+}
+
+#container {
+	position: absolute;	
+	background-image: url('fadedtaoshells.jpg');
+	background-repeat: no-repeat;
+	background-position: 50 50;
+	width: 90%;
+	height: 100%;
+	top: 100px;
+}
+
+#googleads {float:right;}
+h1 { font-size: medium;}
+#intro h1 {font-size:x-large;}
+a.morebutton {
+	float:right;
+	padding: 0.5em;
+	border: 1px solid black;
+	background-color:lightblue;
+	margin-right: 1em;
+}
+
+#headerblock {
+	padding: 2px;
+	border: 1px solid black;
+	background-color: #BFBFBF;
+  height: 90px;
+  width: 100%;
+}
+#headerblock img {
+	margin-bottom: 8px;	
+  border-bottom: 1px solid black;	
+}
+#menu div {float:left;}
+.menuitems {
+	padding: 2px;
+}
+.menuitems a {text-decoration: none; color: black;}
+.menuitem {
+	padding-left: 10px;
+	font-weight: bold;
+	background-color:#AFAFAF;	
+}
+#headerblock .googlead {float:right; clear:none;}
+#googleadplaceholder-2,#googleadplaceholder-3 {float:right;clear:both; padding-top: 100px}
+#container .googlead {padding-top:50px;}
+
+
+#content {margin-top: 1em; padding: 0.8em;}
+#content pre {
+	border: 2px solid black;
+	padding : 0.5em;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jspdf.js"></script>
+<script type="text/javascript" src="FileSaver.js"></script>
+<script type="text/javascript" src="BlobBuilder.js"></script>
+<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+<script type="text/javascript" src="jspdf.plugin.ie_below_9_shim.js"></script>
+<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script>
+
+<script>
+function updatePDF() {
+console.log('upd');
+		var doc = new jsPDF('portrait');
+		var dateReal=new Date();
+		var date=dateReal.getDate()+'/'+dateReal.getMonth()+'/'+dateReal.getFullYear();
+		var schoolClass=$('#schoolclass').val();
+		var title=$('#title').val();
+		var message=$('#message').val();
+		var blockCount=$('#messagesperpage').val();;
+		var pageHeight=280; // allowing margins
+		var blockHeight=280/blockCount;
+		var pageWidth=210;
+		var margin=10;
+		var characterWidth=110;
+		// how var down to the header
+		var messageOffset=18;
+		// break string into many lines
+		var messageParts=message.split(' ');
+		var messageStrings=[];
+		var messageLine='';
+		$.each(messageParts,function(key,value) {
+			messageLine+=' '+value;
+			if (messageLine.length>characterWidth) {
+				messageStrings.push(messageLine);
+				messageLine='';
+			}
+		});
+		doc.setFontSize(10);
+		messageStrings.push(messageLine);
+		var imgData = 'data:image/jpeg;base64,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';
+		for (var i=0; i< blockCount ;i++) {
+			var x=i*blockHeight+margin;
+			if (i>0) {
+				doc.rect(margin,x-margin,200,0);
+			}
+			doc.setFontStyle('bold');
+			doc.addImage(imgData, 'JPEG', margin, x-5);
+			doc.text(title,margin+60,x);
+			var autoText='';
+			if (schoolClass.length>0) autoText+='Class '+schoolClass+'    ';
+			autoText+=date;
+			doc.text(autoText,pageWidth-80,x)
+			doc.setFontStyle('normal');
+			doc.text(messageStrings,margin,x+messageOffset);
+		}
+		var string = doc.output('datauristring');
+		$('iframe').attr('src', string);
+		console.log('done');
+		console.log(string);
+	}
+	
+$(document).ready(function() {
+	// init as blank
+	updatePDF();
+	$('#sendmessagebutton').click(function(key,value) {
+		var dateReal=new Date();
+		var date=dateReal.getDate()+'/'+dateReal.getMonth()+'/'+dateReal.getFullYear();
+		var schoolClass=$('#schoolclass').val();
+		var title=$('#title').val();
+		var message=$('#message').val();
+		if (schoolClass.length==0) {
+			alert('Select a class to send this message to.');
+		} else if (title.length==0) {
+			alert('You must type a title for this message before sending.');
+		} else if (message.length==0) {
+			alert('You must type a message before sending.');
+		} else {
+			$('#usermessage').load('sendmail.php',{schoolClass:schoolClass,title:title,message:message,sendmailpassword:'niceviewovertathra',date:date});
+		}
+		return false;
+	});
+
+	
+	$('form input').change(updatePDF);
+	$('form textarea').change(updatePDF);
+	$('form select').change(updatePDF);
+	
+});
+</script>
+
+
+
+<style>
+#pdfout {
+	width: 800px;
+	height: 400px;
+}
+#usermessage {color:red;font-weight:bold;}
+label {
+	font-weight:bold;
+	vertical-align:top;
+	
+}
+#requestform {
+	padding:20px;
+	float:left;
+}
+textarea{
+  width: 400px;
+  height: 400px;
+}
+#header {
+	width: 100%;
+	padding-bottom:30px;
+}
+#controlbuttons {
+	float:right;
+}
+form {
+}
+form label {margin-right:10px;}
+#content {
+	background-color:#EBFAFF;
+	padding:20px;
+	border: 1px solid black;
+}
+#messagesperpage,#messagesperpagelabel {float:right}
+span.heading {font-weight:bold; font-size:large; margin-left:40px;};
+</style>
+<div id='header'>
+	<img src='tpslogo_medium.jpg' />
+	<span class='heading' >Class Messaging</span>
+	<span id="usermessage" ></span>
+</div>
+<div id='content' >
+	<table><tr><td>
+	<div id='requestform' >
+		<form>
+			<label for='schoolclass' >Class</label><select id='schoolclass' ><option></option><option>K</option><option>1/2</option><option>3</option><option>4</option><option>5</option><option>6</option></select>
+			<label for='messagesperpage' id='messagesperpagelabel'>Messages Per Page</label><select id='messagesperpage' ><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option></select>
+			<br/>
+			<label for='title'>Title</label><input type='text' id='title' value='Sports Day' /><span id='controlbuttons' ><input id='sendmessagebutton' type='submit' value='Send'></span><br/>
+			<label for='message'>Message</label><textarea id='message' >Friday the 16th November we are having the seniors sports day. All students are expected to have sport uniform packed. We will travel to Bega primary school leaving 8.30am. Please be on time or miss out.</textarea><br/>
+		</form>
+	</div>
+</td><td>
+	<iframe id='pdfout' name='pdfout' ></iframe>
+</td></tr></table>
+</div>
+
+
+
+

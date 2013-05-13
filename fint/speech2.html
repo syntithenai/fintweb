@@ -1,0 +1,55 @@
+<script> 
+var recognition = new webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = true;
+
+function showInfo(m) {
+	console.log(m);
+}
+
+ recognition.onstart = function() {
+    recognizing = true;
+    showInfo('info_speak_now');
+  };
+
+  recognition.onerror = function(event) {
+  showInfo('error');
+  };
+
+  recognition.onend = function() {
+    if (window.getSelection) {
+	console.log('end',window.getSelection());
+      window.getSelection().removeAllRanges();
+      var range = document.createRange();
+      range.selectNode(document.getElementById('final_span'));
+      window.getSelection().addRange(range);
+    }
+    if (create_email) {
+      create_email = false;
+      createEmail();
+    }
+  };
+
+  recognition.onresult = function(event) {
+    var interim_transcript = '';
+    if (typeof(event.results) == 'undefined') {
+      recognition.onend = null;
+      recognition.stop();
+      upgrade();
+      return;
+    }
+    for (var i = event.resultIndex; i < event.results.length; ++i) {
+      if (event.results[i].isFinal) {
+        final_transcript += event.results[i][0].transcript;
+      } else {
+        interim_transcript += event.results[i][0].transcript;
+      }
+    }
+    final_transcript = capitalize(final_transcript);
+    final_span.innerHTML = linebreak(final_transcript);
+    interim_span.innerHTML = linebreak(interim_transcript);
+    if (final_transcript || interim_transcript) {
+   //   showButtons('inline-block');
+    }
+  };
+</script>

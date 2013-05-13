@@ -1,0 +1,28 @@
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/googleapis/0.0.4/googleapis.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/jsapi"></script>
+<script type="text/javascript" src="//www.accountchooser.com/client.js"></script>
+<script type="text/javascript">
+  google.load("identitytoolkit", "2", {packages: ["ac"], language:"en"});
+</script>
+<script type="text/javascript">
+  $(function() {
+    window.google.identitytoolkit.setConfig({
+        developerKey: "AIzaSyAwB1dV6fIgZ905S-j2l104UsBlw3zuJf8",
+        companyName: "FINT Personal Finance Tools",
+        callbackUrl: "http://fint.com.au/tests",
+        realm: "",
+        userStatusUrl: "http://fint.com.au/tests",
+        loginUrl: "http://fint.com.au/tests",
+        signupUrl: "http://fint.com.au/tests",
+        homeUrl: "http://fint.com.au/tests",
+        logoutUrl: "http://fint.com.au/tests",
+        idps: ["Gmail"],
+        tryFederatedFirst: true,
+        useContextParam: true,
+        language: "en"
+    });
+    window.google.identitytoolkit.init();
+  });
+</script>

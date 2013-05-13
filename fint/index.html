@@ -1,0 +1,1010 @@
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1.0">
+<link rel="stylesheet" href="lib/jquery-ui/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="lib/jquery.quickdb.css" type="text/css" media="all" />
+<link rel="stylesheet" href="fint.css" type="text/css" media="all" />
+<script src="lib/jquery.js" type="text/javascript"></script>
+<script src="lib/jquery-ui.js" type="text/javascript"></script>
+<script src="lib/WebSQL.min.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.model.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.view.js" type="text/javascript"></script>
+<script src="lib/jquery.quickdb.controller.js" type="text/javascript"></script>
+<script src="finance.lib.js" type="text/javascript"></script>
+<script src="finance.import.anz.js" type="text/javascript"></script>
+<script src="finance.defaults.js" type="text/javascript"></script>
+<script src="finance.ui.js" type="text/javascript"></script>
+<script src="finance.ui.home.js" type="text/javascript"></script>
+<script src="finance.ui.manage.js" type="text/javascript"></script>
+<script src="finance.ui.reports.js" type="text/javascript"></script>
+<script src="finance.ui.share.js" type="text/javascript"></script>
+<script src="metadata/accounts.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div id='content' class='activatable' >
+	<span id='messageswrap'><span id='messages'></span>
+
+	<ul>
+	    <li class='googlead' id="googleadbar" ><img src='images/googlead.png' /></li>
+		<li class='menuitem' ><a href="index.home.html"><img src='images/fint48.png'  /><span>Overview</span></a></li>
+	    <li class='menuitem'><a href="index.reports.html"><img src='images/report.png' ><span>Reports</span></a></li>
+		<li class='menuitem' id="helpbuttonlink" ><a href="index.help.html"><img id='helpbutton' src='images/help.png' ><span>Help</span></a></li>
+		<li class='menuitem'  id='optionsbutton' ><a href="index.manage.html"><img src='images/android_options.png' /><span>More</span></a></li>
+	    <li class='menuitem'  id='sharebutton' ><a href="index.share.html"><img src='images/android_share.png' /><span >Share</span></a></li>
+	</ul>	
+</div>
+
+
+</body>
+</html>
+<!--script type="text/javascript"><! --
+google_ad_client = "ca-pub-8152690534650306";
+/* FINT Mobile 320 */
+google_ad_slot = "4876421784";
+google_ad_width = 320;
+google_ad_height = 50;
+//-- >
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script-->
+
+<textarea id='allrecoardsjson' class='importdatasource' data-name='all records as json' >
+{"rules":[{"rowid":1,"name":"BONUS CREDIT INTEREST PAID","filtertext":"BONUS CREDIT INTEREST PAID","startdate":null,"enddate":null,"accounts":"null","tags":"2"},{"rowid":3,"name":"\"STHN FARM SUPPLIES BEGA\"","filtertext":"\"STHN FARM SUPPLIES BEGA\"","startdate":null,"enddate":null,"accounts":null,"tags":"6"},{"rowid":4,"name":"\"TELSTRA\"","filtertext":"\"TELSTRA\"","startdate":null,"enddate":null,"accounts":null,"tags":"7"},{"rowid":5,"name":"\"WOOLWORTHS\"","filtertext":"\"WOOLWORTHS\"","startdate":null,"enddate":null,"accounts":null,"tags":"8"},{"rowid":6,"name":"\"COUNTRY ENERGY\"","filtertext":"\"COUNTRY ENERGY\"","startdate":null,"enddate":null,"accounts":null,"tags":"9"},{"rowid":7,"name":"\"TRANSFER FROM HCU\"","filtertext":"\"TRANSFER FROM HCU\"","startdate":null,"enddate":null,"accounts":null,"tags":"10"},{"rowid":8,"name":"EFTPOS HANDYWAY NORTHSIDE 0001 BEGA","filtertext":"EFTPOS HANDYWAY NORTHSIDE 0001 BEGA","startdate":null,"enddate":null,"accounts":null,"tags":"11"},{"rowid":9,"name":"\"GSES PTY LTD\"","filtertext":"\"GSES PTY LTD\"","startdate":null,"enddate":null,"accounts":null,"tags":"12"}],"tags":[{"rowid":2,"name":"bank interest","parenttags":"null"},{"rowid":3,"name":"income","parenttags":""},{"rowid":4,"name":"personal income","parenttags":"3"},{"rowid":5,"name":"taxable income","parenttags":"3"},{"rowid":6,"name":"home","parenttags":null},{"rowid":7,"name":"phone&internet telstra","parenttags":null},{"rowid":8,"name":"food","parenttags":null},{"rowid":9,"name":"electricity","parenttags":null},{"rowid":10,"name":"income austcom","parenttags":null},{"rowid":11,"name":"petrol","parenttags":null},{"rowid":12,"name":"income gses","parenttags":null}],"accounts":[{"rowid":1,"name":"saver","number":"","banks":"1","ebankingsites":""},{"rowid":2,"name":"access","number":"","banks":"1","ebankingsites":""},{"rowid":3,"name":"credit card","number":"","banks":"1","ebankingsites":""}],"transactions":[{"rowid":1,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 184883 FROM 562864652","amount":100,"balance":275.26,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":2,"description":"BONUS CREDIT INTEREST PAID","amount":0.44,"balance":275.7,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":3,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 851868 TO DANIEL AND VICKIE WIL","amount":-51,"balance":224.7,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":4,"description":"ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {855243}","amount":-11.01,"balance":213.69,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":5,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 916167 FROM 562864652 EFFECTIVE DATE 27 JUN 2009","amount":100,"balance":313.69,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":6,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 452911 TO 012525562864652","amount":-313.69,"balance":0,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":7,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 847876 FROM 562864652","amount":100,"balance":100,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":8,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":100.01,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":9,"description":"BONUS CREDIT INTEREST PAID","amount":0.15,"balance":100.16,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":10,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 447415 FROM 562864652","amount":100,"balance":200.16,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":11,"description":"BONUS CREDIT INTEREST PAID","amount":0.33,"balance":200.49,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":12,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 786317 FROM 562864652 EFFECTIVE DATE 27 SEP 2009","amount":100,"balance":300.49,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":13,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 898775 TO 4564621004504836 EFFECTIVE DATE 03 OCT 2009","amount":300,"balance":0.49,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":14,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 729730 FROM 562864652","amount":100,"balance":100.49,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":15,"description":"BONUS CREDIT INTEREST PAID","amount":0.19,"balance":100.68,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":16,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 960582 FROM 562864652","amount":100,"balance":200.68,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":17,"description":"BONUS CREDIT INTEREST PAID","amount":0.48,"balance":201.16,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":18,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 262959 FROM 562864652 EFFECTIVE DATE 27 DEC 2009","amount":100,"balance":301.16,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":19,"description":"BONUS CREDIT INTEREST PAID","amount":0.8,"balance":301.96,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":20,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 485580 FROM 562864652","amount":100,"balance":401.96,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":21,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":401.97,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":22,"description":"BONUS CREDIT INTEREST PAID","amount":1.01,"balance":402.98,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":23,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 207974 FROM 562864652 EFFECTIVE DATE 27 FEB 2010","amount":100,"balance":502.98,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":24,"description":"BONUS CREDIT INTEREST PAID","amount":1.27,"balance":504.25,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":25,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 375787 TO 012525562864652 EFFECTIVE DATE 20 MAR 2010","amount":-504.25,"balance":0,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":26,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 863661 FROM 562864652","amount":100,"balance":100,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":27,"description":"BONUS CREDIT INTEREST PAID","amount":0.31,"balance":100.31,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":28,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 711472 FROM 562864652","amount":100,"balance":200.31,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":29,"description":"BONUS CREDIT INTEREST PAID","amount":0.73,"balance":201.04,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":30,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 643665 FROM 562864652 EFFECTIVE DATE 27 JUN 2010","amount":100,"balance":301.04,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":31,"description":"BONUS CREDIT INTEREST PAID","amount":1.09,"balance":302.13,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":32,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 192289 FROM 562864652","amount":100,"balance":402.13,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":33,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":402.14,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":34,"description":"BONUS CREDIT INTEREST PAID","amount":1.49,"balance":403.63,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":35,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 412703 FROM 562864652","amount":100,"balance":503.63,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":36,"description":"BONUS CREDIT INTEREST PAID","amount":2.01,"balance":505.64,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":37,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 474605 FROM 562864652","amount":100,"balance":605.64,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":38,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":605.65,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":39,"description":"BONUS CREDIT INTEREST PAID","amount":2.29,"balance":607.94,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":40,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 495281 FROM 562864652","amount":100,"balance":707.94,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":41,"description":"BONUS CREDIT INTEREST PAID","amount":2.9,"balance":710.84,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":42,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 569674 FROM 562864652 EFFECTIVE DATE 27 NOV 2010","amount":100,"balance":810.84,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":43,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 942574 TO PETER RICHE","amount":-145,"balance":665.84,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":44,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":665.85,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":45,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 421648 FROM 562864652 EFFECTIVE DATE 27 DEC 2010","amount":100,"balance":765.85,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":46,"description":"CARD ENTRY AT BEGA BRANCH","amount":760,"balance":5.85,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":47,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 231979 FROM 562864652","amount":100,"balance":105.85,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":48,"description":"BONUS CREDIT INTEREST PAID","amount":0.44,"balance":106.29,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":49,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 927728 FROM 562864652 EFFECTIVE DATE 27 FEB 2011","amount":100,"balance":206.29,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":50,"description":"BONUS CREDIT INTEREST PAID","amount":0.85,"balance":207.14,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":51,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 571257 FROM 562864652 EFFECTIVE DATE 27 MAR 2011","amount":100,"balance":307.14,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":52,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":307.15,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":53,"description":"BONUS CREDIT INTEREST PAID","amount":1.47,"balance":308.62,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":54,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 666597 FROM 562864652","amount":100,"balance":408.62,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":55,"description":"BONUS CREDIT INTEREST PAID","amount":1.85,"balance":410.47,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":56,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 973915 FROM 562864652","amount":100,"balance":510.47,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":57,"description":"BONUS CREDIT INTEREST PAID","amount":2.57,"balance":513.04,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":58,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 644838 FROM 562864652","amount":100,"balance":613.04,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":59,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":613.05,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":60,"description":"BONUS CREDIT INTEREST PAID","amount":2.92,"balance":615.97,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":61,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 529536 FROM 562864652","amount":100,"balance":715.97,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":62,"description":"BONUS CREDIT INTEREST PAID","amount":3.32,"balance":719.29,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":63,"description":"OPENING BALANCE 719.29 29 AUG ANZ INTERNET BANKING FUNDS TFER TRANSFER 632807 FROM 562864652","amount":100,"balance":819.29,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":64,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 791073 TO 012525562864652","amount":-819.29,"balance":0,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":65,"description":"CREDIT INTEREST PAID","amount":0.01,"balance":0.01,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":66,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 581441 FROM 562864652","amount":100,"balance":100.01,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":67,"description":"BONUS CREDIT INTEREST PAID","amount":0.4,"balance":100.41,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":68,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 694413 FROM 562864652","amount":100,"balance":200.41,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":69,"description":"BONUS CREDIT INTEREST PAID","amount":0.91,"balance":201.32,"split":null,"comment":null,"status":null,"accounts":"1"},{"rowid":70,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 452911 FROM 576016945","amount":313.69,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":71,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 916167 TO 012525576016945 EFFECTIVE DATE 27 JUN 2009","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":72,"description":"TRANSFER FROM DIVERSE CONCEPTS CPO FROM DION","amount":200,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":73,"description":"TRANSFER FROM CYCLERIDES AUSTR CYCLERIDES","amount":4,"balance":6,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":74,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 132367 TO 4564621004504836","amount":1,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":75,"description":"ANZ INTERNET BANKING FUNDS TFER INVOICE 1071 PART2 GSES","amount":475,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":76,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":119.99,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":77,"description":"TRANSFER FROM CYCLERIDES AUSTR INV 1075","amount":200,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":78,"description":"ANZ INTERNET BANKING FUNDS TFER GSES INV1076 GSES","amount":462.5,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":79,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 847876 TO 012525576016945","amount":100,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":80,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":260.43,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":81,"description":"ANZ INTERNET BANKING BPAY BEGA VALLEY COUNCI {288583}","amount":798.13,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":82,"description":"ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {828626} EFFECTIVE DATE 02 AUG 2009","amount":48.28,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":83,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 689994 TO FGD ACCOU EFFECTIVE DATE 01 AUG 2009","amount":90,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":84,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 920133 TO 4564621004504836 ","amount":-1,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":85,"description":"EFTPOS BIG W 0151 WODEN ACTAU","amount":188.72,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":86,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":205.98,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":87,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":241.08,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":88,"description":"AGENT DEPOSIT 1077","amount":200,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":89,"description":"EFTPOS COLES BEGA NSW AU","amount":51.15,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":90,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 447415 TO 012525576016945","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":91,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 495331 TO 4564621004504836","amount":-1,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":92,"description":"EFTPOS STHN FARM SUPPLIES BEGA","amount":196.34,"balance":920.36,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":93,"description":"ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {440408}","amount":-43.45,"balance":876.91,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":94,"description":"AGENT DEPOSIT 1078","amount":1,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":95,"description":"TRANSFER FROM RYAN W & RYAN J","amount":2,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":96,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":229.8,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":97,"description":"EFTPOS TATHRA BEACH SUPERMA TATHRA NSW","amount":60.8,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":98,"description":"ANZ INTERNET BANKING BPAY COUNTRY ENERGY {587275}","amount":406.79,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":99,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 587157 TO FGD ACCOU","amount":1,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":100,"description":"EFTPOS HANDYWAY NORTHSIDE 0001 BEGA","amount":79.3,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":101,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 786317 TO 012525576016945 EFFECTIVE DATE 27 SEP 2009","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":102,"description":"ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {246292}","amount":52.65,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":103,"description":"EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 03 OCT 2009","amount":330.52,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":104,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 211498 TO 4564621004504836","amount":482.06,"balance":922.59,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":105,"description":"ANZ INTERNET BANKING FUNDS TFER INV 1079 GSES PTY LTD","amount":1,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":106,"description":"ANZ INTERNET BANKING FUNDS TFER INVOICE 1079 GSES PTY LTD","amount":1,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":107,"description":"TRANSFER FROM HCU BALANCE&1080","amount":800,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":108,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {188085} EFFECTIVE DATE 25 OCT 2009","amount":50.75,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":109,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 729730 TO 012525576016945","amount":100,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":110,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 509372 TO 4564621004504836","amount":-1,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":111,"description":"AGENT DEPOSIT 1081","amount":325,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":112,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":225.91,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":113,"description":"ANZ INTERNET BANKING BPAY AAMI INSURANCE {316677}","amount":457,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":114,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {737664}  EFFECTIVE DATE 22 NOV 2009","amount":52.63,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":115,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 960582 TO 012525576016945","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":116,"description":"TRANSFER FROM HCU NEWCONT&OWING","amount":900,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":117,"description":"TRANSFER FROM NGHENVIRONMENTAL INVOICE 1083","amount":200,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":118,"description":"ANZ INTERNET BANKING FUNDS TFER INV1068AND1082 PYRAMID POWER","amount":1,"balance":5,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":119,"description":"EFTPOS COLES BEGA NSW AU","amount":280.03,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":120,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 154954 TO 4564621004504836","amount":572.66,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":121,"description":"ANZ ATM BEGA BRANCH BEGA NS","amount":200,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":122,"description":"EFTPOS COLES BEGA NSW AU","amount":341.17,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":123,"description":"TRANSFER FROM HCU INV 1084","amount":500,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":124,"description":"TRANSFER FROM NETBANK FROM GMA","amount":200,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":125,"description":"ANZ INTERNET BANKING BPAY COUNTRY ENERGY {387051} EFFECTIVE DATE 19 DEC 2009","amount":230.94,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":126,"description":"EFTPOS WARAMANGA MEDICAL CE WARAMANGA ACT","amount":65,"balance":4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":127,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":267.58,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":128,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 262959 TO 012525576016945 EFFECTIVE DATE 27 DEC 2009","amount":100,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":129,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 829715 TO ANTONIA VAN HAPER","amount":50,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":130,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 829709 TO 4564621004504836","amount":-1,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":131,"description":"DEPOSIT","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":132,"description":"DEPOSIT","amount":300,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":133,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {926455}","amount":42.04,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":134,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 679963 TO ANTONIA VAN HAPER","amount":50,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":135,"description":"ANZ ATM BEGA BRANCH BEGA NS","amount":43.99,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":136,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 731088 TO ANTONIA VAN HAPER","amount":50,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":137,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":36.93,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":138,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 738263 TO ANTONIA VAN HAPER","amount":50,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":139,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 485580 TO 012525576016945","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":140,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 244914 TO CAREY OSH EFFECTIVE DATE 26 JAN 2010","amount":340,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":141,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {385242}","amount":45.16,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":142,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 365235 TO CSA OFFICIAL RECEIP","amount":223.51,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":143,"description":"AGENT DEPOSIT 1090","amount":362.5,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":144,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 779173 TO 4564621004504836","amount":-1,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":145,"description":"ANZ INTERNET BANKING FUNDS TFER INVS 1091 1093 GSES PTY LTD","amount":1,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":146,"description":"TRANSFER FROM RYAN B E FROM BE RYAN","amount":1,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":147,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 418310 TO KELLOW PARBERY AND AS","amount":264,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":148,"description":"ANZ INTERNET BANKING TRANSFER PYRAMID POWER DCFX SOLAR SYSTE","amount":318.75,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":149,"description":"WOOLWORTHS 1340 BEGA NSWAU","amount":104.22,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":150,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 401592 TO ANTONIA VAN HAPER","amount":25,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":151,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":260.53,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":152,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 960279 TO PG ALEXANDER AND JD W","amount":30,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":153,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {844485}","amount":50.57,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":154,"description":"ANZ INTERNET BANKING BPAY 2511-023895-RTA NS {851209}\\","amount":55,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":155,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 757873 TO ANTONIA VAN HAPER","amount":25,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":156,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 207974 TO 012525576016945 EFFECTIVE DATE 27 FEB 2010","amount":100,"balance":3,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":157,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 502109 TO 4564621004504836","amount":-2,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":158,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 149098 TO ANTONIA VAN HAPER","amount":25,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":159,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":40.89,"balance":963.98,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":160,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 846209 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 MAR 2010","amount":98.17,"balance":865.81,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":161,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU EFFECTIVE DATE 07 MAR 2010","amount":-262.14,"balance":603.67,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":162,"description":"ANZ INTERNET BANKING BPAY AAMI INSURANCE {510986}","amount":473,"balance":130.67,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":163,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 356878 TO ANTONIA VAN HAPER","amount":25,"balance":105.67,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":164,"description":"ANZ INTERNET BANKING FUNDS TFER INV 1096 GSES PTY LTD","amount":300,"balance":405.67,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":165,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 375787 FROM 576016945 EFFECTIVE DATE 20 MAR 2010","amount":504.25,"balance":909.92,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":166,"description":"TRANSFER FROM HCU INV 1095","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":167,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 992069 TO CSA OFFICIAL RECEIP","amount":190.39,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":168,"description":"TRANSFER FROM NICHOLAS GRAHAM- INV 1097","amount":618.75,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":169,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {990226}","amount":33.24,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":170,"description":"ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {990615}","amount":87.49,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":171,"description":"ANZ INTERNET BANKING BPAY NRMA MEMBERSHIP {991222}","amount":92.9,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":172,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 570761 TO 4564621004504836","amount":626.05,"balance":998.6,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":173,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 701298 TO CSA OFFICIAL RECEIP","amount":216.67,"balance":781.93,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":174,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":45.56,"balance":736.37,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":175,"description":"TRANSFER FROM NICHOLAS GRAHAM- NGHENVIRONMENTAL","amount":600,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":176,"description":"TRANSFER FROM CYCLERIDES AUSTR CYCLERIDES","amount":75,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":177,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {258151}","amount":37.28,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":178,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 24 APR 2010","amount":47.44,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":179,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 863661 TO 012525576016945","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":180,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 946761 TO 4564621004504836","amount":154.09,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":181,"description":"TRANSFER FROM ATO ATO005000000152569","amount":17,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":182,"description":"TRANSFER FROM NETREGISTRY PTY NETREGISTRY REFUND","amount":51.88,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":183,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 369550 TO CSA OFFICIAL RECEIP","amount":216.67,"balance":924.77,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":184,"description":"TRANSFER FROM HCU INV 1099","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":185,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {844632} EFFECTIVE DATE 23 MAY 2010","amount":41.62,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":186,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 711472 TO 012525576016945","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":187,"description":"TRANSFER FROM RYAN B E FROM G MA","amount":200,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":188,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":50.64,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":189,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 127839 TO 4564621004504836","amount":878.95,"balance":553.56,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":190,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 919535 TO CSA OFFICIAL RECEIP","amount":-216.67,"balance":336.89,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":191,"description":"TRANSFER FROM HCU INV 1100","amount":500,"balance":836.89,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":192,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":-48.86,"balance":788.03,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":193,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {266876}","amount":-49.01,"balance":739.02,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":194,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 643665 TO 012525576016945 EFFECTIVE DATE 27 JUN 2010","amount":-100,"balance":639.02,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":195,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 544355 TO 4564621004504836","amount":434.18,"balance":204.84,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":196,"description":"DEPOSIT","amount":139,"balance":343.84,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":197,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 519134 TO CSA OFFICIAL RECEIP","amount":216.67,"balance":127.17,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":198,"description":"TRANSFER FROM HCU INV 1101,1103","amount":1,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":199,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 722939 TO GREG COR","amount":50,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":200,"description":"ANZ INTERNET BANKING FUNDS TFER INV 1104 GSES PTY LTD","amount":150,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":201,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 25 JUL 2010","amount":49.21,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":202,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 192289 TO 012525576016945","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":203,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {569563}","amount":52.24,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":204,"description":"TRANSFER FROM HCU INV 1105","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":205,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 336099 TO 4564621004504836","amount":358.74,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":206,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 306120 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 AUG 2010","amount":216.67,"balance":950.31,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":207,"description":"ANZ INTERNET BANKING FUNDS TFER INV 1104 GSES PTY LTD","amount":262.5,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":208,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":52.8,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":209,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 428265 TO MBE ELECTRICAL CONTRA","amount":244.2,"balance":915.81,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":210,"description":"TRANSFER FROM HCU INV #1108","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":211,"description":"TRANSFER FROM NGHENVIRONMENTAL NGH","amount":300,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":212,"description":"ANZ ATM BEGA BRANCH BEGA NS","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":213,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":49.7,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":214,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {133904}","amount":43.3,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":215,"description":"ANZ INTERNET BANKING BPAY BVSC - RATES {134863}","amount":211.17,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":216,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":684,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":217,"description":"TRANSFER FROM HCU INV #1109","amount":500,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":218,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 412703 TO 012525576016945","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":219,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 28 AUG 2010","amount":47.78,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":220,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU","amount":176.64,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":221,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 646189 TO 4564621004504836","amount":860.82,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":222,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 04 SEP 2010","amount":47.26,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":223,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":622.5,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":224,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 640357 TO CSA OFFICIAL RECEIP","amount":216.67,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":225,"description":"EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 11 SEP 2010","amount":66.99,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":226,"description":"DEPOSIT","amount":187.5,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":227,"description":"TRANSFER FROM RYAN W & RYAN J","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":228,"description":"EFTPOS WOOLWORTHS 1340 BEGA NSWAU EFFECTIVE DATE 18 SEP 2010","amount":123.9,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":229,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":643.5,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":230,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":38.54,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":231,"description":"EFTPOS CHESTERS FOODWORKS EDEN NSW 01","amount":104.4,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":232,"description":"1 EXCESS EFTPOS, PHONE BANKING, AUTOMATIC TRANSACTIONS - FEE","amount":0.5,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":233,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 474605 TO 012525576016945","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":234,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":39.54,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":235,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {886440} EFFECTIVE DATE 03 OCT 2010","amount":47.31,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":236,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 974310 TO 4564621004504836","amount":1,"balance":732.35,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":237,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":536,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":238,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":45.28,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":239,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 799253 TO CAREY OSH","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":240,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 699331 TO CSA OFFICIAL RECEIP","amount":216.67,"balance":906.4,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":241,"description":"ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {799680}","amount":474.55,"balance":431.85,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":242,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 17 OCT 2010","amount":-51.25,"balance":380.6,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":243,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":584.5,"balance":965.1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":244,"description":"TRANSFER FROM HCU INV #1110","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":245,"description":"ANZ INTERNET BANKING FUNDS TFER INV 1104 GSES PTY LTD","amount":168.75,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":246,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 495281 TO 012525576016945","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":247,"description":"ANZ ATM BEGA BRANCH BEGA NS","amount":600,"balance":933.85,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":248,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 31 OCT 2010","amount":43.42,"balance":890.43,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":249,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 998230 TO 4564621004504836","amount":553.12,"balance":337.31,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":250,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":692.5,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":251,"description":"TRANSFER FROM NGHENVIRONMENTAL REIMBURSEMENT","amount":65.15,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":252,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 306087 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 NOV 2010","amount":216.67,"balance":878.29,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":253,"description":"ANZ INTERNET BANKING BPAY BVSC - RATES {592962}","amount":-208,"balance":670.29,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":254,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {456128}","amount":43.71,"balance":626.58,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":255,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 487590 TO CAREY OSH","amount":400,"balance":226.58,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":256,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":603.5,"balance":830.08,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":257,"description":"TRANSFER FROM HCU INV #1112","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":258,"description":"ANZ INTERNET BANKING BPAY AAMI INSURANCE {320311}","amount":423,"balance":907.08,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":259,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 569674 TO 012525576016945 EFFECTIVE DATE 27 NOV 2010","amount":-100,"balance":807.08,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":260,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":614,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":261,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 160363 TO 4564621004504836","amount":865.54,"balance":555.54,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":262,"description":"EFTPOS COLES BEGA NSW AU","amount":-366.15,"balance":189.39,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":263,"description":"CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 04 DEC 2010","amount":50.86,"balance":138.53,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":264,"description":"PAYMENT TO PAYPAL AUSTRALIA 4H7224LJSF5C8","amount":178.99,"balance":-40.46,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":265,"description":"TRANSFER FROM RYAN B E STEVEN XMAS","amount":200,"balance":159.54,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":266,"description":"TRANSFER FROM RYAN W & RYAN J STEVEN HALF SOFIE","amount":525,"balance":684.54,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":267,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":126,"balance":810.54,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":268,"description":"PAY/SALARY FROM NGH NGH PAY","amount":614,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":269,"description":"PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY","amount":79,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":270,"description":"PAY/SALARY FROM NGH NGH PAY","amount":572,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":271,"description":"DEBIT INTEREST CHARGED","amount":0.04,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":272,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 421648 TO 012525576016945 EFFECTIVE DATE 27 DEC 2010","amount":100,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":273,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 347745 TO KR MOGRID EFFECTIVE DATE 26 DEC 2010","amount":110,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":274,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":44.17,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":275,"description":"ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {121731}EFFECTIVE DATE 03 JAN 2011","amount":40.64,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":276,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":48.95,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":277,"description":"ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {121842} EFFECTIVE DATE 03 JAN 2011","amount":51.15,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":278,"description":"EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 02 JAN 2011","amount":363.85,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":279,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 359433 TO 4564621004504836","amount":999.75,"balance":316.99,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":280,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 164729 TO CSA OFFICIAL RECEIP","amount":216.67,"balance":100.32,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":281,"description":"CARD ENTRY AT BEGA BRANCH","amount":460,"balance":560.32,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":282,"description":"PAY/SALARY FROM NGH NGH PAY","amount":551,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":283,"description":"TRANSFER FROM NGHENVIRONMENTAL REIMBURSEMENT","amount":189.95,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":284,"description":"TRANSFER FROM HCU INV #1113","amount":500,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":285,"description":"PAY/SALARY FROM NGH NGH PAY","amount":350,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":286,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 231979 TO 012525576016945","amount":100,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":287,"description":"CALTEX 22714 BEGA DEPOT NSW","amount":50.74,"balance":2,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":288,"description":"ANZ INTERNET BANKING FUNDS TFER TRANSFER 574848 TO 4564621004504836","amount":968.61,"balance":1,"split":null,"comment":null,"status":null,"accounts":"2"},{"rowid":289,"description":"EFTPOS COLES BEGA NSW AU","amount":106.73,"balance":925.19,"split":null,"comment":null,"status":null,"accounts":"2"}],"mm_transactionstags":[{"rowid":2,"transactions":"69","tags":"2"},{"rowid":5,"transactions":"62","tags":"2"},{"rowid":6,"transactions":"60","tags":"2"},{"rowid":7,"transactions":"57","tags":"2"},{"rowid":8,"transactions":"55","tags":"2"},{"rowid":9,"transactions":"53","tags":"2"},{"rowid":10,"transactions":"50","tags":"2"},{"rowid":11,"transactions":"48","tags":"2"},{"rowid":12,"transactions":"67","tags":"2"}],"quickdbconfiguration":[]}
+
+</textarea>
+
+
+<textarea id='credittransactions' class='importdatasource' data-name='anz credit card transactions' >
+
+25/05/2009 22/05/2009 4836 CALTEX NORTHSIDE BEGA 44.06 2,471.16
+25/05/2009 24/05/2009 4836 GOLDOZNC BEMBOKA 0.01 2,471.17
+25/05/2009 25/05/2009 4836 WOOLWORTHS 1340 BEGA 187.25 2,658.42
+27/05/2009 25/05/2009 4836 VIRGIN MOBILE SYDNEY 39.00 2,697.42
+01/06/2009 01/06/2009 4836 WOOLWORTHS 1340 BEGA 166.17 2,863.59
+01/06/2009 01/06/2009 4836 PAYMENT THANKYOU 215656 2,427.10CR 436.49
+02/06/2009 29/05/2009 4836 522 GO LO BEGA 23.47 459.96
+05/06/2009 03/06/2009 4836 STARPAY EUROPE LTD LONDON 59.00 518.96
+08/06/2009 08/06/2009 4836 WOOLWORTHS 1340 BEGA 274.86 793.82
+10/06/2009 10/06/2009 4836 WOOLWORTHS 1340 BEGA 25.96 819.78
+12/06/2009 10/06/2009 4836 AUSTRALIA POST 226368 BEGA 199.00 1,018.78
+12/06/2009 10/06/2009 4836 522 GO LO BEGA 34.92 1,053.70
+15/06/2009 11/06/2009 4836 CALTEX NORTHSIDE BEGA 47.75 1,101.45
+15/06/2009 15/06/2009 4836 TARGET COUNTRY 6331 BEGA 22.99 1,124.44
+15/06/2009 15/06/2009 4836 WOOLWORTHS 1340 BEGA 107.31 1,231.75
+15/06/2009 15/06/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 120.00 1,351.75
+16/06/2009 15/06/2009 4836 STHN FARM SUPPLIES BEGA 15.65 1,367.40
+17/06/2009 12/06/2009 4836 NSW REGISTRY OF BDM CHIPPENDALE 42.00 1,409.4
+
+22/06/2009 20/06/2009 4836 PRICELINE PHARMACY BEGA 36.87 1,446.27
+22/06/2009 22/06/2009 4836 WOOLWORTHS 1340 BEGA 99.81 1,546.08
+25/06/2009 23/06/2009 4836 WYKES FAMILY PTY LTD BEGA 152.12 1,698.20
+29/06/2009 25/06/2009 4836 VIRGIN MOBILE NORTH SYDNEY 39.00 1,737.20
+29/06/2009 26/06/2009 4836 CALTEX NORTHSIDE BEGA 63.67 1,800.87
+29/06/2009 29/06/2009 4836 WOOLWORTHS 1340 BEGA 124.69 1,925.56
+01/07/2009 29/06/2009 4836 SPORTS POWER BEGA BEGA 34.95 1,960.51
+02/07/2009 02/07/2009 4836 PAYMENT THANKYOU 132367 1,409.40CR 551.11
+03/07/2009 03/07/2009 4836 POWERHOUSE 8225 WODEN 85.79 636.90
+06/07/2009 02/07/2009 4836 MERIMBULA IMLAY CLUB MERIMBULA 34.00 670.90
+06/07/2009 03/07/2009 4836 FARRER SERVICE STATI FARRER 45.43 716.33
+06/07/2009 04/07/2009 4836 POWERHOUSE 8225 WODEN 75.96CR 640.37
+06/07/2009 06/07/2009 4836 WOOLWORTHS 1340 BEGA 102.14 742.51
+06/07/2009 06/07/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 105.00 847.51
+08/07/2009 08/07/2009 4836 WOOLWORTHS 1340 BEGA 25.69 873.20
+09/07/2009 07/07/2009 4836 CALTEX NORTHSIDE BEGA 49.63 922.83
+10/07/2009 08/07/2009 4836 BEGA FARM SUPPLIES BEGA 35.20 958.03
+13/07/2009 13/07/2009 4836 WOOLWORTHS 1340 BEGA 24.83 982.86
+13/07/2009 13/07/2009 4836 WOOLWORTHS 1340 BEGA 43.33 1,026.19
+15/07/2009 15/07/2009 4836 WOOLWORTHS 1340 BEGA 110.30 1,136.49
+
+20/07/2009 16/07/2009 4836 RFSHOP OXLEY 200.00 1,336.49
+20/07/2009 18/07/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 333.00 1,669.49
+20/07/2009 20/07/2009 4836 BEGA GARDEN NURSERY BEGA 73.70 1,743.19
+20/07/2009 20/07/2009 4836 WOOLWORTHS 1340 BEGA 144.66 1,887.85
+20/07/2009 20/07/2009 4836 WOOLWORTHS 1340 BEGA 24.83 1,912.68
+20/07/2009 20/07/2009 4836 BEGA MITRE 10 BEGA 22.99 1,935.67
+22/07/2009 20/07/2009 4836 CANNING STREET SUR BEGA 55.00 1,990.67
+27/07/2009 24/07/2009 4836 TATHRA BEACH SUPERMA TATHRA 27.15 2,017.82
+27/07/2009 24/07/2009 4836 CALTEX NORTHSIDE BEGA 46.31 2,064.13
+29/07/2009 25/07/2009 4836 VIRGIN MOBILE NORTH SYDNEY 39.00 2,103.13
+29/07/2009 29/07/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 352.50 2,455.63
+03/08/2009 30/07/2009 4836 CALTEX NORTHSIDE BEGA 59.59 2,515.22
+03/08/2009 03/08/2009 4836 PAYMENT THANKYOU 920133 1,136.49CR 1,378.73
+05/08/2009 03/08/2009 4836 TECHBUY PTY LTD SILVERWATER 237.60 1,616.33
+07/08/2009 05/08/2009 4836 MOBIL MAWSON MAWSON 40.38 1,656.71
+10/08/2009 06/08/2009 4836 UNITED MICHELAGO MICHELAGO 23.45 1,680.16
+10/08/2009 08/08/2009 4836 NAMECHEAP.COM 310-672-6223 23.87 1,704.03
+10/08/2009 08/08/2009 4836 GOLDOZNC BEMBOKA 0.01 1,704.04
+10/08/2009 10/08/2009 4836 TARGET COUNTRY 6331 BEGA 36.99 1,741.03
+11/08/2009 10/08/2009 4836 BP BEGA 1062 BEGA 49.76 1,790.79
+13/08/2009 13/08/2009 4836 GOLDOZNC BEMBOKA 0.01 1,790.80
+13/08/2009 13/08/2009 4836 GOLDOZNC BEMBOKA 0.01 1,790.81
+
+19/08/2009 15/08/2009 4836 CALTEX NORTHSIDE BEGA 27.45 1,818.26
+26/08/2009 26/08/2009 4836 COLES BEGA 131.24 1,949.50
+28/08/2009 26/08/2009 4836 VIRGIN MOBILE NORTH SYDNEY 39.00 1,988.50
+31/08/2009 27/08/2009 4836 ANTHONYS CAR & HEADO BEGA 31.70 2,020.20
+31/08/2009 27/08/2009 4836 RFSHOP OXLEY 173.05CR 1,847.15
+31/08/2009 31/08/2009 4836 WOOLWORTHS 1340 BEGA 50.58 1,897.73
+31/08/2009 31/08/2009 4836 WOOLWORTHS 1340 BEGA 116.64 2,014.37
+01/09/2009 01/09/2009 4836 PAYMENT THANKYOU 495331 1,790.81CR 223.56
+09/09/2009 07/09/2009 4836 BEGA TYRE SERV PTY LTD BEGA 258.50 482.06
+
+21/09/2009 18/09/2009 4836 QBE CTP SYDNEY 360.00 842.06
+21/09/2009 18/09/2009 4836 851 RTA NCC2 NEWCASTLE 278.00 1,120.06
+21/09/2009 21/09/2009 4836 WOOLWORTHS 1340 BEGA 118.02 1,238.08
+23/09/2009 16/09/2009 4836 WWW.SKYPE.COM INTERNET 16.55 1,254.63
+23/09/2009 21/09/2009 4836 RFSHOP OXLEY 201.99 1,456.62
+25/09/2009 22/09/2009 4836 NORTHSIDE FUEL BEGA 43.52 1,500.14
+28/09/2009 25/09/2009 4836 VIRGIN MOBILE NORTH SYDNEY 39.00 1,539.14
+28/09/2009 28/09/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 105.00 1,644.14
+28/09/2009 28/09/2009 4836 WOOLWORTHS 1340 BEGA 26.36 1,670.50
+28/09/2009 28/09/2009 4836 WOOLWORTHS 1340 BEGA 87.19 1,757.69
+30/09/2009 26/09/2009 4836 COCKS PETROLEUM PTY LT BEGA 30.40 1,788.09
+05/10/2009 03/10/2009 4836 PAYMENT THANKYOU 898775 300.00CR 1,488.09
+05/10/2009 05/10/2009 4836 PAYMENT THANKYOU 211498 482.06CR 1,006.03
+12/10/2009 12/10/2009 4836 WOOLWORTHS 1340 BEGA 52.72 1,058.75
+
+22/10/2009 22/10/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 140.00 1,198.75
+26/10/2009 22/10/2009 4836 522 GO LO BEGA 17.72 1,216.47
+28/10/2009 25/10/2009 4836 VIRGIN MOBILE NORTH SYDNEY 39.00 1,255.47
+29/10/2009 26/10/2009 4836 NORTHSIDE FUEL BEGA 33.84 1,289.31
+30/10/2009 28/10/2009 4836 BP WARAMANGA 1111 WARAMANGA 35.77 1,325.08
+02/11/2009 28/10/2009 4836 NORTHSIDE FUEL BEGA 62.76 1,387.84
+02/11/2009 29/10/2009 4836 NETREGISTRY PTY LTD CHIPPENDALE 51.88 1,439.72
+02/11/2009 02/11/2009 4836 WOOLWORTHS 1340 BEGA 154.69 1,594.41
+02/11/2009 02/11/2009 4836 PAYMENT THANKYOU 509372 1,058.75CR 535.66
+10/11/2009 RATE 17.74%PA TO 17.99%PA ON PURCHASES
+16/11/2009 13/11/2009 4836 COMMERCIAL HOTEL BAR BEGA 37.00 572.66
+
+23/11/2009 19/11/2009 4836 NORTHSIDE FUEL BEGA 29.70 602.36
+23/11/2009 23/11/2009 4836 WOOLWORTHS 1340 BEGA 47.50 649.86
+23/11/2009 23/11/2009 4836 WOOLWORTHS 1340 BEGA 324.29 974.15
+27/11/2009 25/11/2009 4836 VIRGIN MOBILE NORTH SYDNEY 54.00 1,028.15
+30/11/2009 28/11/2009 4836 COLES BEGA 50.10 1,078.25
+01/12/2009 01/12/2009 4836 BEGA AGRICULTURAL SERVICE BEGA 55.00 1,133.25
+02/12/2009 02/12/2009 4836 PAYMENT THANKYOU 154954 572.66CR 560.59
+07/12/2009 03/12/2009 4836 COCKS PETROLEUM PTY LT BEGA 42.68 603.27
+08/12/2009 RATE 17.99%PA TO 18.24%PA ON PURCHASES
+14/12/2009 13/12/2009 4836 COLES BEGA 469.43 1,072.70
+14/12/2009 14/12/2009 4836 BEGA MITRE 10 BEGA 36.79 1,109.49
+15/12/2009 14/12/2009 4836 CANDELO STOCKFEEDS BEGA 165.00 1,274.49
+18/12/2009 18/12/2009 4836 COLES BEGA 79.60 1,354.09
+
+21/12/2009 21/12/2009 4836 WOOLWORTHS 1340 BEGA 24.29 1,378.38
+29/12/2009 23/12/2009 4836 BP WARAMANGA 1111 WARAMANGA 44.54 1,422.92
+29/12/2009 28/12/2009 4836 WOOLWORTHS 1340 BEGA 117.21 1,540.13
+31/12/2009 27/12/2009 4836 VIRGIN MOBILE NORTH SYDNEY 39.00 1,579.13
+31/12/2009 29/12/2009 4836 CALTEX BEGA BEGA 49.59 1,628.72
+04/01/2010 30/12/2009 4836 BEGA FARM SUPPLIES BEGA 52.00 1,680.72
+04/01/2010 31/12/2009 4836 PG ALEXANDER AND JD BEGA 295.00 1,975.72
+04/01/2010 04/01/2010 4836 WOOLWORTHS 1340 BEGA 24.59 2,000.31
+04/01/2010 04/01/2010 4836 PAYMENT THANKYOU 829709 1,354.09CR 646.22
+06/01/2010 06/01/2010 4836 WOOLWORTHS 1340 BEGA 24.59 670.81
+11/01/2010 09/01/2010 4836 COLES BEGA 122.19 793.00
+12/01/2010 12/01/2010 4836 COLES BEGA 16.72 809.72
+13/01/2010 09/01/2010 4836 CALTEX BEGA BEGA 42.28 852.00
+13/01/2010 13/01/2010 4836 BEGA MITRE 10 BEGA 38.79 890.79
+14/01/2010 07/01/2010 4836 WWW.SKYPE.COM INTERNET 16.49 907.28
+18/01/2010 16/01/2010 4836 APPLE ONLINE STORE SYDNEY 199.00 1,106.28
+18/01/2010 18/01/2010 4836 WOOLWORTHS 1340 BEGA 79.76 1,186.04
+
+22/01/2010 22/01/2010 4836 COLES BEGA 25.15 1,211.19
+22/01/2010 22/01/2010 4836 LIQUORLAND BEGA 22.99 1,234.18
+25/01/2010 22/01/2010 4836 CALTEX BEGA BEGA 31.08 1,265.26
+25/01/2010 22/01/2010 4836 BARBEQUES GALORE BEGA BEGA 20.00 1,285.26
+29/01/2010 26/01/2010 4836 CALTEX BEGA BEGA 41.84 1,327.10
+01/02/2010 28/01/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.39 1,366.49
+01/02/2010 01/02/2010 4836 PAYMENT THANKYOU 779173 1,186.04CR 180.45
+05/02/2010 03/02/2010 4836 BAELANDS INVESTMENTS MORUYA 34.14 214.59
+08/02/2010 08/02/2010 4836 WOOLWORTHS 1340 BEGA 106.88 321.47
+08/02/2010 08/02/2010 4836 BEGA BETTA ELECTRICAL BEGA 1,599.00 1,920.47
+10/02/2010 10/02/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 204.95 2,125.42
+12/02/2010 10/02/2010 4836 CALTEX BEGA BEGA 41.77 2,167.19
+15/02/2010 15/02/2010 4836 WOOLWORTHS 1340 BEGA 27.98 2,195.17
+15/02/2010 15/02/2010 4836 WOOLWORTHS 1340 BEGA 52.28 2,247.45
+
+24/02/2010 23/02/2010 4836 NAMECHEAP.COM 3106726223 22.21 2,269.66
+01/03/2010 25/02/2010 4836 CALTEX BEGA BEGA 56.29 2,325.95
+01/03/2010 26/02/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.39 2,365.34
+01/03/2010 28/02/2010 4836 CAPITAL PATHOLOGY 618658 ANZ BPAY 57.70 2,423.04
+01/03/2010 01/03/2010 4836 CAPITAL PATHOLOGY BEGA 110.00 2,533.04
+04/03/2010 04/03/2010 4836 PAYMENT THANKYOU 502109 2,247.45CR 285.59
+05/03/2010 RATE 18.24%PA TO 18.49%PA ON PURCHASES
+08/03/2010 05/03/2010 4836 SAPPHIRE HARDWARE TI BEGA 37.89 323.48
+15/03/2010 11/03/2010 4836 CANNING STREET SUR BEGA 57.00 380.48
+15/03/2010 15/03/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 154.00 534.48
+17/03/2010 15/03/2010 4836 CALTEX BEGA BEGA 45.09 579.57
+18/03/2010 11/03/2010 4836 WWW.SKYPE.COM INTERNET 16.48 596.05
+18/03/2010 18/03/2010 4828 ANNUAL FEE 30.00 626.05
+
+31/03/2010 27/03/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.39 665.44
+31/03/2010 29/03/2010 4836 CALTEX BEGA BEGA 25.42 690.86
+01/04/2010 01/04/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 41.00 731.86
+01/04/2010 01/04/2010 4836 PAYMENT THANKYOU 570761 626.05CR 105.81
+06/04/2010 04/04/2010 4836 COLES EXPRESS 1645 PHILLIP 48.28 154.09
+
+19/04/2010 19/04/2010 4836 WOOLWORTHS 1340 BEGA 25.29 179.38
+19/04/2010 19/04/2010 4836 WOOLWORTHS 1340 BEGA 86.45 265.83
+23/04/2010 23/04/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 117.26 383.09
+26/04/2010 23/04/2010 4836 TATHRA BEACH SUPERMA TATHRA 28.00 411.09
+26/04/2010 26/04/2010 4836 WOOLWORTHS 1340 BEGA 25.29 436.38
+27/04/2010 26/04/2010 4836 REGION SERVICE STN COOMA 42.26 478.64
+29/04/2010 26/04/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.39 518.03
+03/05/2010 03/05/2010 4836 WOOLWORTHS 1340 BEGA 32.52 550.55
+03/05/2010 03/05/2010 4836 PAYMENT THANKYOU 946761 154.09CR 396.46
+07/05/2010 07/05/2010 4836 COLES BEGA 31.60 428.06
+07/05/2010 07/05/2010 4836 COLES BEGA 128.94 557.00
+07/05/2010 RATE 18.74%PA TO 18.99%PA ON PURCHASES
+10/05/2010 07/05/2010 4836 CALTEX BEGA BEGA 55.85 612.85
+10/05/2010 09/05/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 613.85
+10/05/2010 10/05/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 21.90 635.75
+14/05/2010 14/05/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 180.00 815.75
+14/05/2010 14/05/2010 4836 COLES BEGA 63.20 878.95
+
+27/05/2010 25/05/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.39 918.34
+28/05/2010 27/05/2010 4836 COLES EXPRESS 1645 PHILLIP 105.03 1,023.37
+31/05/2010 29/05/2010 4836 WOOLWORTHS 1126 COOMA 30.79 1,054.16
+01/06/2010 01/06/2010 4836 PAYMENT THANKYOU 127839 878.95CR 175.21
+08/06/2010 07/06/2010 4836 HERMES NOMINEES PT BEGA 39.30 214.51
+09/06/2010 09/06/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 215.51
+14/06/2010 10/06/2010 4836 CALTEX BEGA BEGA 85.84 301.35
+14/06/2010 12/06/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 24.29 325.64
+14/06/2010 14/06/2010 4836 WOOLWORTHS 1340 BEGA 108.54 434.18
+
+25/06/2010 23/06/2010 4836 EWAY PHILLIP 139.00 573.18
+28/06/2010 25/06/2010 4836 VIRGIN MOBILE NORTH SYDNEY 54.39 627.57
+28/06/2010 28/06/2010 4836 WOOLWORTHS 1340 BEGA 76.69 704.26
+05/07/2010 27/06/2010 4836 SKYPE 44870835190 16.48 720.74
+05/07/2010 05/07/2010 4836 PAYMENT THANKYOU 544355 434.18CR 286.56
+09/07/2010 09/07/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 287.56
+13/07/2010 12/07/2010 4836 PRICELINE PHARMACY BEGA 28.38 315.94
+14/07/2010 11/07/2010 4836 CALTEX BEGA BEGA 42.80 358.74
+
+26/07/2010 25/07/2010 4836 WOOLWORTHS 1340 BEGA 29.95 388.69
+26/07/2010 25/07/2010 4836 WOOLWORTHS 1340 BEGA 66.43 455.12
+28/07/2010 25/07/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.54 494.66
+30/07/2010 28/07/2010 4836 CALTEX BEGA BEGA 36.41 531.07
+02/08/2010 01/08/2010 4836 WOOLWORTHS 1340 BEGA 30.79 561.86
+02/08/2010 01/08/2010 4836 WOOLWORTHS 1340 BEGA 110.09 671.95
+02/08/2010 02/08/2010 4836 PAYMENT THANKYOU 336099 358.74CR 313.21
+06/08/2010 04/08/2010 4836 TATHRA BEACH SUPERMA TATHRA 32.50 345.71
+06/08/2010 06/08/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 17.16 362.87
+09/08/2010 09/08/2010 4836 WOOLWORTHS 1340 BEGA 31.68 394.55
+09/08/2010 09/08/2010 4836 WOOLWORTHS 1340 BEGA 115.25 509.80
+09/08/2010 09/08/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 510.80
+11/08/2010 10/08/2010 4836 PRICELINE PHARMACY BEGA 8.99 519.79
+16/08/2010 14/08/2010 4836 WOOLWORTHS 1340 BEGA 32.52 552.31
+17/08/2010 16/08/2010 4836 COLES BEGA NSW 253.92 806.23
+17/08/2010 16/08/2010 4836 L/LAND BEGA NSW 21.99 828.22
+17/08/2010 16/08/2010 4836 COLES BEGA NSW 32.60 860.82
+
+20/08/2010 20/08/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 99.20 960.02
+23/08/2010 23/08/2010 4836 WOOLWORTHS 1340 BEGA 34.93 994.95
+23/08/2010 23/08/2010 4836 WOOLWORTHS 1340 BEGA 33.26 1,028.21
+27/08/2010 25/08/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.40 1,067.61
+01/09/2010 30/08/2010 4836 SAPPHIRE HARDWARE TI BEGA 14.20 1,081.81
+01/09/2010 30/08/2010 4836 TATHRA BEACH SUPERMA TATHRA 34.80 1,116.61
+01/09/2010 01/09/2010 4836 PAYMENT THANKYOU 646189 860.82CR 255.79
+02/09/2010 31/08/2010 4836 ANTHONYS CAR & HEADO BEGA 55.05 310.84
+03/09/2010 03/09/2010 4836 WOOLWORTHS 1340 BEGA 41.99 352.83
+06/09/2010 05/09/2010 4836 COLES BEGA NSW 138.38 491.21
+09/09/2010 08/09/2010 4836 COLES BEGA NSW 32.99 524.20
+09/09/2010 09/09/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 525.20
+13/09/2010 10/09/2010 4836 QBE CTP SYDNEY 341.00 866.20
+13/09/2010 10/09/2010 4836 200 RTA INTERNET /IVR SURRY HILLS 306.00 1,172.20
+13/09/2010 12/09/2010 4836 COLES BEGA NSW 56.97 1,229.17
+13/09/2010 12/09/2010 4836 COLES BEGA NSW 31.29 1,260.46
+13/09/2010 13/09/2010 4836 WOOLWORTHS 1340 BEGA 38.18 1,298.64
+15/09/2010 12/09/2010 4836 CALTEX BEGA BEGA 47.80 1,346.44
+
+22/09/2010 21/09/2010 4836 COLES BEGA NSW 31.29 1,377.73
+24/09/2010 24/09/2010 4836 BEN BOYD SERVICE STATION EDEN 47.33 1,425.06
+27/09/2010 24/09/2010 4836 BACK TO FRONT GARDEN KALARU 182.07 1,607.13
+27/09/2010 25/09/2010 4836 COLES BEGA NSW 29.51 1,636.64
+28/09/2010 27/09/2010 4836 COLES BEGA NSW 54.48 1,691.12
+29/09/2010 25/09/2010 4836 VIRGIN MOBILE NORTH SYDNEY 39.39 1,730.51
+29/09/2010 29/09/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 103.80 1,834.31
+04/10/2010 04/10/2010 4836 WOOLWORTHS 1340 BEGA 37.28 1,871.59
+04/10/2010 04/10/2010 4836 PAYMENT THANKYOU 974310 1,346.44CR 525.15
+11/10/2010 09/10/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 526.15
+11/10/2010 09/10/2010 4836 PRICELINE PHARMACY BEGA 26.97 553.12
+
+19/10/2010 19/10/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 16.31 569.43
+22/10/2010 21/10/2010 4836 COLES BEGA NSW 63.53 632.96
+25/10/2010 24/10/2010 4836 COLES BEGA NSW 63.53 696.49
+27/10/2010 25/10/2010 4836 VIRGIN MOBILE NORTH SYDNEY 69.06 765.55
+28/10/2010 28/10/2010 4836 WARAMANGA NEWSAGENCY WARAMANGA 78.14 843.69
+29/10/2010 27/10/2010 4836 CALTEX BEGA BEGA 55.85 899.54
+29/10/2010 28/10/2010 4836 BP WARAMANGA 1111 WARAMANGA 43.44 942.98
+01/11/2010 01/11/2010 4836 PAYMENT THANKYOU 998230 553.12CR 389.86
+05/11/2010 04/11/2010 4836 COLES BEGA NSW 236.39 626.25
+09/11/2010 09/11/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 627.25
+16/11/2010 16/11/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 96.00 723.25
+16/11/2010 RATE 18.99%PA TO 19.24%PA ON PURCHASES
+18/11/2010 16/11/2010 4836 SAPPHIRE HARDWARE TI BEGA 78.76 802.01
+18/11/2010 17/11/2010 4836 COLES BEGA NSW 63.53 865.54
+
+22/11/2010 19/11/2010 4836 COMMERCIAL HOTEL BAR BEGA 40.00 905.54
+23/11/2010 22/11/2010 4836 COLES BEGA NSW 73.46 979.00
+23/11/2010 22/11/2010 4836 COLES BEGA NSW 63.53 1,042.53
+24/11/2010 23/11/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 15.97 1,058.50
+29/11/2010 26/11/2010 4836 VIRGIN MOBILE NORTH SYDNEY 59.69 1,118.19
+02/12/2010 02/12/2010 4836 PAYMENT THANKYOU 160363 865.54CR 252.65
+06/12/2010 02/12/2010 4836 HIGHWAY 1 AUST PTY PERTH 10.00 262.65
+06/12/2010 06/12/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 195.70 458.35
+08/12/2010 07/12/2010 4836 WOOLWORTHS 1126 COOMA 180.53 638.88
+09/12/2010 08/12/2010 4836 HARVEY NORMAN COMPUTER FYSHWICK 189.95 828.83
+09/12/2010 09/12/2010 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 829.83
+13/12/2010 13/12/2010 4836 BEGA AGRICULTURAL SERVICE BEGA 96.00 925.83
+14/12/2010 13/12/2010 4836 COLES BEGA NSW 10.97 936.80
+14/12/2010 13/12/2010 4836 COLES BEGA NSW 62.95 999.75
+
+21/12/2010 21/12/2010 4836 WARAMANGA NEWSAGENCY WARAMANGA 35.94 1,035.69
+22/12/2010 20/12/2010 4836 TINY'S GREEN SHED SYMONSTON 20.00 1,055.69
+29/12/2010 25/12/2010 4836 COLES EXPR PHILLIP ACT 65.50 1,121.19
+29/12/2010 27/12/2010 4836 COLES BEGA NSW 78.16 1,199.35
+29/12/2010 27/12/2010 4836 COLES BEGA NSW 31.45 1,230.80
+31/12/2010 26/12/2010 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,290.40
+31/12/2010 27/12/2010 4836 TATHRA BEACH SUPERMA TATHRA 34.00 1,324.40
+31/12/2010 30/12/2010 4836 COLES BEGA NSW 28.10 1,352.50
+31/12/2010 30/12/2010 4836 L/LAND BEGA NSW 39.99 1,392.49
+04/01/2011 04/01/2011 4836 PAYMENT THANKYOU 359433 999.75CR 392.74
+06/01/2011 05/01/2011 4836 COLES BEGA NSW 63.85 456.59
+10/01/2011 09/01/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 457.59
+10/01/2011 10/01/2011 4836 BEGA AGRICULTURAL SERVICE BEGA 19.95 477.54
+11/01/2011 10/01/2011 4836 GLEN/MIA SUPPLIES BEGA 156.65 634.19
+11/01/2011 10/01/2011 4836 COLES BEGA NSW 30.55 664.74
+17/01/2011 17/01/2011 4836 BEGA AGRICULTURAL SERVICE BEGA 123.75 788.49
+18/01/2011 17/01/2011 4836 COLES BEGA NSW 113.97 902.46
+18/01/2011 17/01/2011 4836 COLES BEGA NSW 66.15 968.61
+
+21/01/2011 19/01/2011 4836 GOOGLE *CounterPath google.com/ch 8.24 976.85
+21/01/2011 21/01/2011 4836 WOOLWORTHS 1126 COOMA 79.65 1,056.50
+21/01/2011 21/01/2011 4836 WOOLWORTHS 1126 COOMA 61.59 1,118.09
+24/01/2011 21/01/2011 4836 CALTEX COOMA COOMA 52.40 1,170.49
+27/01/2011 25/01/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,230.09
+31/01/2011 27/01/2011 4836 TATHRA BEACH SUPERMA TATHRA 33.20 1,263.29
+31/01/2011 29/01/2011 4836 GOOGLE *TeslaCoil google.com/ch 1.56 1,264.85
+31/01/2011 29/01/2011 4836 GOOGLE *NextApp google.com/ch 3.11 1,267.96
+01/02/2011 31/01/2011 4836 COLES BEGA NSW 139.99 1,407.95
+01/02/2011 31/01/2011 4836 COLES BEGA NSW 34.45 1,442.40
+01/02/2011 01/02/2011 4836 PAYMENT THANKYOU 574848 968.61CR 473.79
+02/02/2011 01/02/2011 4836 GLEN/MIA SUPPLIES BEGA 131.90 605.69
+03/02/2011 03/02/2011 4836 ROSS AND MARGARET RITCHIE BEGA 32.80 638.49
+09/02/2011 07/02/2011 4836 TWO LAKES SERVICE STAT KALARU 42.21 680.70
+09/02/2011 09/02/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 681.70
+10/02/2011 10/02/2011 4836 WOOLWORTHS 1266 MERIMBULA 35.86 717.56
+14/02/2011 11/02/2011 4836 CALTEX BEGA DEPOT TUPPAL 46.91 764.47
+14/02/2011 13/02/2011 4836 COLES BEGA NSW 26.63 791.10
+14/02/2011 13/02/2011 4836 COLES BEGA NSW 30.95 822.05
+
+23/02/2011 20/02/2011 4836 TATHRA BEACH SUPERMA TATHRA 37.00 859.05
+23/02/2011 21/02/2011 4836 AMPOL BEGA 53.78 912.83
+25/02/2011 24/02/2011 4836 COLES BEGA NSW 57.30 970.13
+25/02/2011 24/02/2011 4836 COLES BEGA NSW 35.55 1,005.68
+25/02/2011 24/02/2011 4836 L/LAND BEGA NSW 48.99 1,054.67
+28/02/2011 25/02/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,114.27
+02/03/2011 28/02/2011 4836 CALTEX BEGA BEGA 81.22 1,195.49
+04/03/2011 02/03/2011 4836 GOOGLE *Zume Software google.com/ch 1.01 1,196.50  
+07/03/2011 07/03/2011 4836 PAYMENT THANKYOU 212459 822.05CR 374.45
+08/03/2011 08/03/2011 4836 WOOLWORTHS 1266 MERIMBULA 38.03 412.48
+09/03/2011 09/03/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 413.48
+14/03/2011 13/03/2011 4836 COLES BEGA NSW 33.70 447.18
+15/03/2011 14/03/2011 4836 COLES BEGA NSW 23.47 470.65
+18/03/2011 17/03/2011 4836 COLES BEGA NSW 31.70 502.35
+18/03/2011 17/03/2011 4836 COLES BEGA NSW 74.67 577.02
+20/03/2011 20/03/2011 4828 ANNUAL FEE 30.00 607.02
+
+24/03/2011 23/03/2011 4836 COLES BEGA NSW 64.54 671.56
+24/03/2011 23/03/2011 4836 L/LAND BEGA NSW 16.49 688.05
+24/03/2011 23/03/2011 4836 COLES BEGA NSW 33.70 721.75
+30/03/2011 26/03/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 781.35
+30/03/2011 29/03/2011 4836 NAMECHEAPINC 3233752822 10.21 791.56
+04/04/2011 02/04/2011 4836 COLES BEGA NSW 33.70 825.26
+04/04/2011 04/04/2011 4836 PAYMENT THANKYOU 587927 607.02CR 218.24
+06/04/2011 04/04/2011 4836 GLEN/MIA SUPPLIES BEGA 418.75 636.99
+11/04/2011 09/04/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 637.99
+11/04/2011 11/04/2011 4836 BEGA AGRICULTURAL SERVICE BEGA 103.80 741.79
+12/04/2011 11/04/2011 4836 COLES BEGA NSW 156.82 898.61
+12/04/2011 11/04/2011 4836 COLES BEGA NSW 33.70 932.31
+13/04/2011 13/04/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 15.12 947.43
+
+19/04/2011 18/04/2011 4836 COLES BEGA NSW 109.25 1,056.68
+20/04/2011 18/04/2011 4836 TATHRA BEACH SUPERMA TATHRA 34.80 1,091.48
+21/04/2011 18/04/2011 4836 GO LO 522 BEGA 36.43 1,127.91
+29/04/2011 25/04/2011 4836 TWO LAKES SERVICE STAT KALARU 55.15 1,183.06
+29/04/2011 25/04/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,242.66
+02/05/2011 27/04/2011 4836 BUCKLEY DOWDLE SUPMKT TATHRA 32.83 1,275.49
+02/05/2011 02/05/2011 4836 PAYMENT THANKYOU 553066 947.43CR 328.06
+03/05/2011 02/05/2011 4836 COLES BEGA NSW 418.50 746.56
+09/05/2011 09/05/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 747.56
+12/05/2011 10/05/2011 4836 WODEN CAMPING WORLD PHILLIP 81.74 829.30
+16/05/2011 12/05/2011 4836 CALTEX WEST GOSFORD 156.29 985.59
+16/05/2011 12/05/2011 4836 GO LO 150 KINCUMBER 42.17 1,027.76
+16/05/2011 13/05/2011 4836 COLES TAREE NSW 72.38 1,100.14
+
+20/05/2011 18/05/2011 4836 DOONAN SERVICE STAT DOONAN 206.06 1,306.20
+23/05/2011 22/05/2011 4836 COLES EXPR PHILLIP ACT 215.51 1,521.71
+27/05/2011 25/05/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,581.31
+30/05/2011 27/05/2011 4836 L/LAND BEGA NSW 12.49 1,593.80
+31/05/2011 30/05/2011 4836 COLES BEGA NSW 31.65 1,625.45
+31/05/2011 30/05/2011 4836 COLES BEGA NSW 134.89 1,760.34
+01/06/2011 01/06/2011 4836 PAYMENT THANKYOU 381249 1,100.14CR 660.20
+06/06/2011 04/06/2011 4836 COLES BEGA NSW 34.40 694.60
+07/06/2011 06/06/2011 4836 COLES BEGA NSW 53.30 747.90
+09/06/2011 08/06/2011 4836 COLES BEGA NSW 31.65 779.55
+09/06/2011 09/06/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 780.55
+10/06/2011 07/06/2011 4836 GOOGLE *PLUGPLAYER GOOGLE.COM/CH 5.14 785.69
+13/06/2011 10/06/2011 4836 COLES BEGA NSW 113.38 899.07
+13/06/2011 12/06/2011 4836 COLES BEGA NSW 35.25 934.32
+14/06/2011 11/06/2011 4836 APPLE ONLINE STORE SYDNEY 39.00 973.32
+16/06/2011 16/06/2011 4836 BEGA AGRICULTURAL SERVICE BEGA 222.00 1,195.32
+
+20/06/2011 19/06/2011 4836 COLES BEGA NSW 35.25 1,230.57
+29/06/2011 25/06/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,290.17
+04/07/2011 04/07/2011 4836 PAYMENT THANKYOU 605587 1,195.32CR 94.85
+07/07/2011 06/07/2011 4836 COLES BEGA NSW 35.94 130.79
+11/07/2011 10/07/2011 4836 COLES BEGA NSW 32.50 163.29
+11/07/2011 10/07/2011 4836 COLES BEGA NSW 288.63 451.92
+12/07/2011 12/07/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 452.92
+15/07/2011 RATE 19.24%PA TO 00.00%PA ON PURCHASES
+18/07/2011 14/07/2011 4836 CALTEX BEGA BEGA 37.30 490.22
+
+19/07/2011 15/07/2011 4836 ITUNES MUSIC STORE SYDNEY 5.99 496.21
+20/07/2011 19/07/2011 4836 COLES BEGA NSW 34.77 530.98
+20/07/2011 19/07/2011 4836 COLES BEGA NSW 37.10 568.08
+25/07/2011 22/07/2011 4836 COLES BEGA NSW 35.25 603.33
+26/07/2011 23/07/2011 4836 GOOGLE *COUNTERPATH GOOGLE.COM/CH 8.80 612.13
+26/07/2011 26/07/2011 4836 CYB CANBERRA FYSHWICK 132.00 744.13
+27/07/2011 25/07/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 803.73
+27/07/2011 26/07/2011 4836 Jaycar Electronics Fyshwick 59.85 863.58
+27/07/2011 26/07/2011 4836 SUPER CHEAP AUTO FYSHWICK 30.95 894.53
+29/07/2011 26/07/2011 4836 HARRIS TECHNOLOGY FYSHWICK 8.65 903.18
+29/07/2011 26/07/2011 4836 HARRIS TECHNOLOGY FYSHWICK 99.00 1,002.18
+29/07/2011 26/07/2011 4836 WOW SIGHT SOUND FYSHWICK 15.95 1,018.13
+01/08/2011 28/07/2011 4836 CTX WOW WESTON WESTON 117.58 1,135.71
+01/08/2011 29/07/2011 4836 COLES BEGA NSW 99.69 1,235.40
+01/08/2011 29/07/2011 4836 COLES BEGA NSW 35.25 1,270.65
+01/08/2011 01/08/2011 4836 PAYMENT THANKYOU 310540 490.22CR 780.43
+08/08/2011 05/08/2011 4836 COLES BEGA NSW 35.74 816.17
+09/08/2011 09/08/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 817.17
+11/08/2011 10/08/2011 4836 COLES BEGA NSW 32.99 850.16
+15/08/2011 12/08/2011 4836 COLES BEGA NSW 37.55 887.71
+15/08/2011 12/08/2011 4836 COLES BEGA NSW 206.82 1,094.53
+
+22/08/2011 19/08/2011 4836 COLES BEGA NSW 19.29 1,113.82
+22/08/2011 19/08/2011 4836 CALTEX BEGA BEGA 52.13 1,165.95
+22/08/2011 21/08/2011 4836 COLES BEGA NSW 32.95 1,198.90
+22/08/2011 21/08/2011 4836 L/LAND BEGA NSW 21.99 1,220.89
+22/08/2011 22/08/2011 4836 BEGA AGRICULTURAL SERVICE BEGA 59.70 1,280.59
+26/08/2011 24/08/2011 4836 ANTHONYS CAR & HEADO BEGA 34.50 1,315.09
+29/08/2011 25/08/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,374.69
+29/08/2011 28/08/2011 4836 COLES BEGA NSW 35.70 1,410.39
+01/09/2011 01/09/2011 4836 PAYMENT THANKYOU 177087 1,094.53CR 315.86
+05/09/2011 02/09/2011 4836 COLES BEGA NSW 129.72 445.58
+05/09/2011 02/09/2011 4836 COLES BEGA NSW 68.65 514.23
+06/09/2011 05/09/2011 4836 COLES BEGA NSW 21.14 535.37
+09/09/2011 07/09/2011 4836 ANTHONYS CAR & HEADO BEGA 257.67 793.04
+09/09/2011 09/09/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 794.04
+12/09/2011 11/09/2011 4836 COLES BEGA NSW 161.53 955.57
+14/09/2011 12/09/2011 4836 CALTEX BEGA BEGA 36.62 992.19
+14/09/2011 14/09/2011 4836 PAYMENT - THANKYOU 2,000.00CR 1,007.81CR
+15/09/2011 14/09/2011 4836 DIGSEN NOMINEES PL WESTON 15.95 991.86CR
+15/09/2011 14/09/2011 4836 COLES EXPR PHILLIP ACT 48.69 943.17CR
+15/09/2011 14/09/2011 4836 TA COUNTRY WESTON CREEK ACT 277.94 665.23CR
+15/09/2011 14/09/2011 4836 FCLIQUOR PHILLIP ACT 62.40 602.83CR
+
+21/09/2011 19/09/2011 4836 434 RTA BEGA BEGA 119.00 483.83CR
+23/09/2011 23/09/2011 4836 AAMI INSURANCE 333145 ANZ BPAY 12.00 471.83CR
+26/09/2011 23/09/2011 4836 COLES BEGA NSW 138.19 333.64CR
+26/09/2011 23/09/2011 4836 COLES BEGA NSW 32.95 300.69CR
+26/09/2011 23/09/2011 4836 ANTHONYS CAR & HEADO BEGA 114.70 185.99CR
+26/09/2011 23/09/2011 4836 PAYPAL *LEEANGAUSTR 4029357733 16.47 169.52CR
+27/09/2011 26/09/2011 4836 COLES BEGA NSW 39.01 130.51CR
+27/09/2011 26/09/2011 4836 COLES BEGA NSW 39.01 91.50CR
+27/09/2011 26/09/2011 4836 COLES BEGA NSW 39.01CR 130.51CR
+29/09/2011 27/09/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 70.91CR
+29/09/2011 28/09/2011 4836 COLES BEGA NSW 36.04 34.87CR
+03/10/2011 01/10/2011 4836 SAPPHIRE HARDWARE BEGA 85.98 51.11
+05/10/2011 04/10/2011 4836 COLES BEGA NSW 126.39 177.50
+05/10/2011 04/10/2011 4836 COLES BEGA NSW 69.33 246.83
+10/10/2011 09/10/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 247.83
+11/10/2011 10/10/2011 4836 BEGA AGRICULTURAL BEGA 103.50 351.33
+13/10/2011 12/10/2011 4836 COLES BEGA NSW 200.85 552.18
+13/10/2011 12/10/2011 4836 COLES BEGA NSW 33.70 585.88
+17/10/2011 13/10/2011 4836 PAYPAL *FIRETOYS 4029357733 78.70 664.58
+18/10/2011 17/10/2011 4836 COLES BEGA NSW 31.40 695.98
+
+
+20/10/2011 19/10/2011 4836 COLES BEGA NSW 126.34 822.32
+24/10/2011 20/10/2011 4836 APPLE ONLINE STORE SYDNEY 149.00 971.32
+24/10/2011 23/10/2011 4836 COLES BEGA NSW 30.95 1,002.27
+27/10/2011 25/10/2011 4836 VIRGIN MOBILE NORTH SYDNEY 59.60 1,061.87
+28/10/2011 27/10/2011 4836 COLES BEGA NSW 30.95 1,092.82
+28/10/2011 27/10/2011 4836 COLES BEGA NSW 75.42 1,168.24
+01/11/2011 01/11/2011 4836 PAYMENT THANKYOU 288928 695.98CR 472.26
+07/11/2011 06/11/2011 4836 COLES BEGA NSW 69.33 541.59
+09/11/2011 09/11/2011 4836 TPG INTERNET PTY LTD NORTH RYDE 1.00 542.59
+14/11/2011 11/11/2011 4836 COLES BATEMANS BAY NSW 69.33 611.92
+14/11/2011 11/11/2011 4836 KMART BATEMANS BAY NSW 150.00 761.92
+14/11/2011 11/11/2011 4836 CALTEX BEGA BEGA 58.57 820.49
+15/11/2011 14/11/2011 4836 COLES BEGA NSW 213.17 1,033.66
+16/11/2011 13/11/2011 4836 PAYPAL *FIRETOYS 4029357733 196.18 1,229.84
+
+
+
+
+</textarea>
+<textarea id='accesstransactions'  class='importdatasource' data-name='anz access transactions' >
+2009
+25/06/2009 OPENING BALANCE 1,680.97
+29/06/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 452911 FROM 576016945 313.69 1,994.66
+29/06/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 916167 TO 012525576016945 EFFECTIVE DATE 27 JUN 2009 100.00 1,894.66
+01/07/2009 TRANSFER FROM DIVERSE CONCEPTS CPO FROM DION 200.00 2,094.66
+02/07/2009 TRANSFER FROM CYCLERIDES AUSTR CYCLERIDES 4,225.00 6,319.66
+02/07/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 132367 TO 4564621004504836 1,409.40 4,910.26
+08/07/2009 ANZ INTERNET BANKING FUNDS TFER INVOICE 1071 PART2 GSES 475.00 5,385.26
+15/07/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 119.99 5,265.27
+20/07/2009 TRANSFER FROM CYCLERIDES AUSTR INV 1075 200.00 5,465.27
+21/07/2009 ANZ INTERNET BANKING FUNDS TFER GSES INV1076 GSES 462.50 5,927.77
+27/07/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 847876 TO 012525576016945 100.00 5,827.77
+27/07/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 260.43 5,567.34
+28/07/2009 ANZ INTERNET BANKING BPAY BEGA VALLEY COUNCI {288583} 798.13 4,769.21
+03/08/2009 ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {828626} EFFECTIVE DATE 02 AUG 2009 48.28 4,720.93
+
+03/8/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 689994 TO FGD ACCOU EFFECTIVE DATE 01 AUG 2009 90.00 4,630.93
+03/8/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 920133 TO 4564621004504836  1,136.49 3,494.44
+04/8/2009 EFTPOS BIG W 0151 WODEN ACTAU 188.72 3,305.72
+10/8/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 205.98 3,099.74
+17/8/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 241.08 2,858.66
+20/8/2009 AGENT DEPOSIT 1077 200.00 3,058.66
+26/8/2009 EFTPOS COLES BEGA NSW AU 51.15 3,007.51
+27/8/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 447415 TO 012525576016945 100.00 2,907.51
+01/9/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 495331 TO 4564621004504836 1,790.81 1,116.70
+02/9/2009 EFTPOS STHN FARM SUPPLIES BEGA 196.34 920.36
+04/9/2009 ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {440408} 43.45 876.91
+08/9/2009 AGENT DEPOSIT 1078 1,000.00 1,876.91
+09/9/2009 TRANSFER FROM RYAN W & RYAN J 2,000.00 3,876.91
+14/9/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 229.80 3,647.11
+18/9/2009 EFTPOS TATHRA BEACH SUPERMA TATHRA NSW 60.80 3,586.31
+22/9/2009 ANZ INTERNET BANKING BPAY COUNTRY ENERGY {587275} 406.79 3,179.52
+22/9/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 587157 TO FGD ACCOU 1,212.40 1,967.12
+23/9/2009 EFTPOS HANDYWAY NORTHSIDE 0001 BEGA 79.30 1,887.82
+
+2009
+25/9/2009 OPENING BALANCE 1,887.82
+28/9/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 786317 TO 012525576016945 EFFECTIVE DATE 27 SEP 2009 100.00 1,787.82
+05/10/2009 ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {246292} 52.65 1,735.17
+05/10/2009 EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 03 OCT 2009 330.52 1,404.65
+05/10/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 211498 TO 4564621004504836 482.06 922.59
+12/10/2009 ANZ INTERNET BANKING FUNDS TFER INV 1079 GSES PTY LTD 1,037.50 1,960.09
+12/10/2009 ANZ INTERNET BANKING FUNDS TFER INVOICE 1079 GSES PTY LTD 1,150.00 3,110.09
+26/10/2009 TRANSFER FROM HCU BALANCE&1080 800.00 3,910.09
+26/10/2009 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {188085} EFFECTIVE DATE 25 OCT 2009 50.75 3,859.34
+27/10/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 729730 TO 012525576016945 100.00 3,759.34
+02/11/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 509372 TO 4564621004504836 1,058.75 2,700.59
+03/11/2009 AGENT DEPOSIT 1081 325.00 3,025.59
+04/11/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 225.91 2,799.68
+05/11/2009 ANZ INTERNET BANKING BPAY AAMI INSURANCE {316677} 457.00 2,342.68
+
+23/11/2009 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {737664}  EFFECTIVE DATE 22 NOV 2009 52.63 2,290.05
+27/11/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 960582 TO 012525576016945 100.00 2,190.05
+30/11/2009 TRANSFER FROM HCU NEWCONT&OWING 900.00 3,090.05
+30/11/2009 TRANSFER FROM NGHENVIRONMENTAL INVOICE 1083 200.00 3,290.05
+01/12/2009 ANZ INTERNET BANKING FUNDS TFER INV1068AND1082 PYRAMID POWER 1,900.00 5,190.05
+01/12/2009 EFTPOS COLES BEGA NSW AU 280.03 4,910.02
+02/12/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 154954 TO 4564621004504836 572.66 4,337.36
+04/12/2009 ANZ ATM BEGA BRANCH BEGA NS 200.00 4,137.36
+16/12/2009 EFTPOS COLES BEGA NSW AU 341.17 3,796.19
+21/12/2009 TRANSFER FROM HCU INV 1084 500.00 4,296.19
+21/12/2009 TRANSFER FROM NETBANK FROM GMA 200.00 4,496.19
+21/12/2009 ANZ INTERNET BANKING BPAY COUNTRY ENERGY {387051} EFFECTIVE DATE 19 DEC 2009 230.94 4,265.25
+23/12/2009 EFTPOS WARAMANGA MEDICAL CE WARAMANGA ACT 65.00 4,200.25
+23/12/2009 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 267.58 3,932.67
+
+2009
+24/12/2009 OPENING BALANCE 3,932.67
+29/12/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 262959 TO 012525576016945 EFFECTIVE DATE 27 DEC 2009 100.00 3,832.67
+2010
+04/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 829715 TO ANTONIA VAN HAPER 50.00 3,782.67
+04/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 829709 TO 4564621004504836 1,354.09 2,428.58
+06/01/2010 DEPOSIT 100.00 2,528.58 
+06/01/2010 DEPOSIT 300.00 2,828.58
+08/01/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {926455} 42.04 2,786.54
+11/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 679963 TO ANTONIA VAN HAPER 50.00 2,736.54
+13/01/2010 ANZ ATM BEGA BRANCH BEGA NS 43.99 2,780.53
+18/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 731088 TO ANTONIA VAN HAPER 50.00 2,730.53
+20/01/2010 CALTEX 22714 BEGA DEPOT NSW 36.93 2,693.60
+25/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 738263 TO ANTONIA VAN HAPER 50.00 2,643.60
+27/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 485580 TO 012525576016945 100.00 2,543.60
+27/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 244914 TO CAREY OSH EFFECTIVE DATE 26 JAN 2010 340.00 2,203.60
+28/01/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {385242} 45.16 2,158.44
+
+28/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 365235 TO CSA OFFICIAL RECEIP 223.51 1,934.93
+01/02/2010 AGENT DEPOSIT 1090 362.50 2,297.43 
+01/02/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 779173 TO 4564621004504836 1,186.04 1,111.39
+08/02/2010 ANZ INTERNET BANKING FUNDS TFER INVS 1091 1093 GSES PTY LTD 1,162.50 2,273.89
+08/02/2010 TRANSFER FROM RYAN B E FROM BE RYAN 1,599.00 3,872.89
+11/02/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 418310 TO KELLOW PARBERY AND AS 264.00 3,608.89
+16/02/2010 ANZ INTERNET BANKING TRANSFER PYRAMID POWER DCFX SOLAR SYSTE 318.75 3,927.64
+16/02/2010 WOOLWORTHS 1340 BEGA NSWAU 104.22 3,823.42
+22/02/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 401592 TO ANTONIA VAN HAPER 25.00 3,798.42
+23/02/2010 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 260.53 3,537.89
+26/02/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 960279 TO PG ALEXANDER AND JD W 30.00 3,507.89
+26/02/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {844485} 50.57 3,457.32
+26/02/2010 ANZ INTERNET BANKING BPAY 2511-023895-RTA NS {851209}\ 55.00 3,402.32
+01/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 757873 TO ANTONIA VAN HAPER 25.00 3,377.32
+01/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 207974 TO 012525576016945 EFFECTIVE DATE 27 FEB 2010 100.00 3,277.32
+04/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 502109 TO 4564621004504836 2,247.45 1,029.87
+08/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 149098 TO ANTONIA VAN HAPER 25.00 1,004.87
+08/03/2010 CALTEX 22714 BEGA DEPOT NSW 40.89 963.98
+08/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 846209 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 MAR 2010 98.17 865.81
+08/03/2010 EFTPOS WOOLWORTHS 1340 BEGA NSWAU EFFECTIVE DATE 07 MAR 2010 262.14 603.67
+12/03/2010 ANZ INTERNET BANKING BPAY AAMI INSURANCE {510986} 473.00 130.67
+15/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 356878 TO ANTONIA VAN HAPER 25.00 105.67
+17/03/2010 ANZ INTERNET BANKING FUNDS TFER INV 1096 GSES PTY LTD 300.00 405.67
+22/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 375787 FROM 576016945 EFFECTIVE DATE 20 MAR 2010 504.25 909.92
+23/03/2010 TRANSFER FROM HCU INV 1095 500.00 1,409.92
+24/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 992069 TO CSA OFFICIAL RECEIP 190.39 1,219.53
+25/03/2010 TRANSFER FROM NICHOLAS GRAHAM- INV 1097 618.75 1,838.28
+25/03/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {990226} 33.24 1,805.04
+25/03/2010 ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {990615} 87.49 1,717.55
+25/03/2010 ANZ INTERNET BANKING BPAY NRMA MEMBERSHIP {991222} 92.90 1,624.65
+
+2010
+25/03/2010 OPENING BALANCE 1,624.65
+01/04/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 570761 TO 4564621004504836 626.05 998.60
+07/04/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 701298 TO CSA OFFICIAL RECEIP 216.67 781.93
+13/04/2010 CALTEX 22714 BEGA DEPOT NSW 45.56 736.37
+16/04/2010 TRANSFER FROM NICHOLAS GRAHAM- NGHENVIRONMENTAL 600.00 1,336.37
+19/04/2010 TRANSFER FROM CYCLERIDES AUSTR CYCLERIDES 75.00 1,411.37
+22/04/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {258151} 37.28 1,374.09
+26/04/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 24 APR 2010 47.44 1,326.65
+27/04/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 863661 TO 012525576016945 100.00 1,226.65
+03/05/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 946761 TO 4564621004504836 154.09 1,072.56
+06/05/2010 TRANSFER FROM ATO ATO005000000152569 17.00 1,089.56
+07/05/2010 TRANSFER FROM NETREGISTRY PTY NETREGISTRY REFUND 51.88 1,141.44
+07/05/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 369550 TO CSA OFFICIAL RECEIP 216.67 924.77
+21/05/2010 TRANSFER FROM HCU INV 1099 500.00 1,424.77
+24/05/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {844632} EFFECTIVE DATE 23 MAY 2010 41.62 1,383.15
+
+27/05/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 711472 TO 012525576016945 100.00 1,283.15
+31/05/2010 TRANSFER FROM RYAN B E FROM G MA 200.00 1,483.15
+01/06/2010 CALTEX 22714 BEGA DEPOT NSW 50.64 1,432.51 
+01/06/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 127839 TO 4564621004504836 878.95 553.56
+07/06/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 919535 TO CSA OFFICIAL RECEIP 216.67 336.89
+16/06/2010 TRANSFER FROM HCU INV 1100 500.00 836.89
+24/06/2010 CALTEX 22714 BEGA DEPOT NSW 48.86 788.03
+25/06/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {266876} 49.01 739.02
+
+2010
+25/06/2010 OPENING BALANCE 739.02
+28/06/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 643665 TO 012525576016945 EFFECTIVE DATE 27 JUN 2010 100.00 639.02
+05/07/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 544355 TO 4564621004504836 434.18 204.84
+06/07/2010 DEPOSIT 139.00 343.84
+07/07/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 519134 TO CSA OFFICIAL RECEIP 216.67 127.17
+08/07/2010 TRANSFER FROM HCU INV 1101,1103 1,000.00 1,127.17
+15/07/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 722939 TO GREG COR 50.00 1,077.17
+16/07/2010 ANZ INTERNET BANKING FUNDS TFER INV 1104 GSES PTY LTD 150.00 1,227.17
+26/07/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 25 JUL 2010 49.21 1,177.96
+27/07/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 192289 TO 012525576016945 100.00 1,077.96
+29/07/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {569563} 52.24 1,025.72
+30/07/2010 TRANSFER FROM HCU INV 1105 500.00 1,525.72
+02/08/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 336099 TO 4564621004504836 358.74 1,166.98
+09/08/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 306120 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 AUG 2010 216.67 950.31
+
+10/08/2010 ANZ INTERNET BANKING FUNDS TFER INV 1104 GSES PTY LTD 262.50 1,212.81
+10/08/2010 CALTEX 22714 BEGA DEPOT NSW 52.80 1,160.01
+12/08/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 428265 TO MBE ELECTRICAL CONTRA 244.20 915.81
+16/08/2010 TRANSFER FROM HCU INV #1108 500.00 1,415.81
+17/08/2010 TRANSFER FROM NGHENVIRONMENTAL NGH 300.00 1,715.81
+17/08/2010 ANZ ATM BEGA BRANCH BEGA NS 100.00 1,615.81
+19/08/2010 CALTEX 22714 BEGA DEPOT NSW 49.70 1,566.11
+26/08/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {133904} 43.30 1,522.81
+26/08/2010 ANZ INTERNET BANKING BPAY BVSC - RATES {134863} 211.17 1,311.64
+27/08/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 684.00 1,995.64
+27/08/2010 TRANSFER FROM HCU INV #1109 500.00 2,495.64
+27/08/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 412703 TO 012525576016945 100.00 2,395.64
+30/08/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 28 AUG 2010 47.78 2,347.86
+30/08/2010 EFTPOS WOOLWORTHS 1340 BEGA NSWAU 176.64 2,171.22
+01/09/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 646189 TO 4564621004504836 860.82 1,310.40
+06/09/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 04 SEP 2010 47.26 1,263.14
+07/09/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 622.50 1,885.64
+07/09/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 640357 TO CSA OFFICIAL RECEIP 216.67 1,668.97
+13/09/2010 EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 11 SEP 2010 66.99 1,601.98
+15/09/2010 DEPOSIT 187.50 1,789.48
+15/09/2010 TRANSFER FROM RYAN W & RYAN J 100.00 1,889.48
+20/09/2010 EFTPOS WOOLWORTHS 1340 BEGA NSWAU EFFECTIVE DATE 18 SEP 2010 123.90 1,765.58
+21/09/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 643.50 2,409.08
+21/09/2010 CALTEX 22714 BEGA DEPOT NSW 38.54 2,370.54
+24/09/2010 EFTPOS CHESTERS FOODWORKS EDEN NSW 01 104.40 2,266.14
+24/09/2010 1 EXCESS EFTPOS, PHONE BANKING, AUTOMATIC TRANSACTIONS - FEE 0.50 2,265.64
+
+2010
+24/09/2010 OPENING BALANCE 2,265.64
+27/09/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 474605 TO 012525576016945 100.00 2,165.64
+28/09/2010 CALTEX 22714 BEGA DEPOT NSW 39.54 2,126.10
+04/10/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {886440} EFFECTIVE DATE 03 OCT 2010 47.31 2,078.79
+04/10/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 974310 TO 4564621004504836 1,346.44 732.35
+05/10/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 536.00 1,268.35
+06/10/2010 CALTEX 22714 BEGA DEPOT NSW 45.28 1,223.07
+07/10/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 799253 TO CAREY OSH 100.00 1,123.07
+07/10/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 699331 TO CSA OFFICIAL RECEIP 216.67 906.40
+07/10/2010 ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {799680} 474.55 431.85
+18/10/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 17 OCT 2010 51.25 380.60
+19/10/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 584.50 965.10
+20/10/2010 TRANSFER FROM HCU INV #1110 500.00 1,465.10
+22/10/2010 ANZ INTERNET BANKING FUNDS TFER INV 1104 GSES PTY LTD 168.75 1,633.85
+27/10/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 495281 TO 012525576016945 100.00 1,533.85
+
+27/10/2010 ANZ ATM BEGA BRANCH BEGA NS 600.00 933.85
+01/11/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 31 OCT 2010 43.42 890.43
+01/11/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 998230 TO 4564621004504836 553.12 337.31
+02/11/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 692.50 1,029.81
+04/11/2010 TRANSFER FROM NGHENVIRONMENTAL REIMBURSEMENT 65.15 1,094.96
+08/11/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 306087 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 NOV 2010 216.67 878.29
+10/11/2010 ANZ INTERNET BANKING BPAY BVSC - RATES {592962} 208.00 670.29
+11/11/2010 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {456128} 43.71 626.58
+15/11/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 487590 TO CAREY OSH 400.00 226.58
+16/11/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 603.50 830.08
+17/11/2010 TRANSFER FROM HCU INV #1112 500.00 1,330.08
+18/11/2010 ANZ INTERNET BANKING BPAY AAMI INSURANCE {320311} 423.00 907.08
+29/11/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 569674 TO 012525576016945 EFFECTIVE DATE 27 NOV 2010 100.00 807.08
+30/11/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 614.00 1,421.08
+02/12/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 160363 TO 4564621004504836 865.54 555.54
+03/12/2010 EFTPOS COLES BEGA NSW AU 366.15 189.39
+06/12/2010 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 04 DEC 2010 50.86 138.53
+07/12/2010 PAYMENT TO PAYPAL AUSTRALIA 4H7224LJSF5C8 178.99 -40.46
+09/12/2010 TRANSFER FROM RYAN B E STEVEN XMAS 200.00 159.54
+09/12/2010 TRANSFER FROM RYAN W & RYAN J STEVEN HALF SOFIE 525.00 684.54
+14/12/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 126.00 810.54
+14/12/2010 PAY/SALARY FROM NGH NGH PAY 614.00 1,424.54
+23/12/2010 PAY/SALARY FROM NGHENVIRONMENTAL NGH PAY 79.00 1,503.54
+24/12/2010 PAY/SALARY FROM NGH NGH PAY 572.00 2,075.54
+24/12/2010 DEBIT INTEREST CHARGED 0.04 2,075.50
+
+
+
+
+2010
+24/12/2010 OPENING BALANCE 2,075.50
+29/12/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 421648 TO 012525576016945 EFFECTIVE DATE 27 DEC 2010 100.00 1,975.50
+29/12/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 347745 TO KR MOGRID EFFECTIVE DATE 26 DEC 2010 110.00 1,865.50
+30/12/2010 CALTEX 22714 BEGA DEPOT NSW 44.17 1,821.33
+2011
+04/01/2011 ANZ INTERNET BANKING BPAY TELSTRA CORP LTD {121731}EFFECTIVE DATE 03 JAN 2011 40.64 1,780.69
+04/01/2011 CALTEX 22714 BEGA DEPOT NSW 48.95 1,731.74
+04/01/2011 ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {121842} EFFECTIVE DATE 03 JAN 2011 51.15 1,680.59
+04/01/2011 EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 02 JAN 2011 363.85 1,316.74
+04/01/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 359433 TO 4564621004504836 999.75 316.99
+07/01/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 164729 TO CSA OFFICIAL RECEIP 216.67 100.32
+10/01/2011 CARD ENTRY AT BEGA BRANCH 460.00 560.32
+11/01/2011 PAY/SALARY FROM NGH NGH PAY 551.00 1,111.32
+11/01/2011 TRANSFER FROM NGHENVIRONMENTAL REIMBURSEMENT 189.95 1,301.27
+17/01/2011 TRANSFER FROM HCU INV #1113 500.00 1,801.27
+
+25/01/2011 PAY/SALARY FROM NGH NGH PAY 350.00 2,151.27
+27/01/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 231979 TO 012525576016945 100.00 2,051.27
+28/01/2011 CALTEX 22714 BEGA DEPOT NSW 50.74 2,000.53
+01/02/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 574848 TO 4564621004504836 968.61 1,031.92
+07/02/2011 EFTPOS COLES BEGA NSW AU 106.73 925.19
+07/02/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 540471 TO CSA OFFICIAL RECEIP 216.67 708.52
+08/02/2011 PAY/SALARY FROM NGH NGH PAY 959.00 1,667.52
+14/02/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 434001 TO TATHRA CHILDRENS SERV 115.50 1,552.02
+22/02/2011 PAY/SALARY FROM NGH NGH PAY 1,228.25 2,780.27 
+28/02/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 927728 TO 012525576016945 EFFECTIVE DATE 27 FEB 2011 100.00 2,680.27
+28/02/2011 ANZ INTERNET BANKING BPAY BVSC - RATES {718223} 208.00 2,472.27
+01/03/2011 ANZ INTERNET BANKING BPAY 2511-023895-RTA NS {846494} 56.00 2,416.27
+01/03/2011 ANZ INTERNET BANKING BPAY AAMI INSURANCE {846138} 519.43 1,896.84
+07/03/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 212466 TO CSA OFFICIAL RECEIP 216.67 1,680.17
+07/03/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 212459 TO 4564621004504836 822.05 858.12
+08/03/2011 PAY/SALARY FROM NGH NGH PAY 666.50 1,524.62
+14/03/2011 CALTEX 22714 BEGA DEPOT NSW 55.85 1,468.77
+22/03/2011 PAY/SALARY FROM NGH NGH PAY 721.50 2,190.27
+
+
+2011
+25/03/2011 OPENING BALANCE 2,190.27
+28/03/2011 CALTEX 22714 BEGA DEPOT NSW 42.22 2,148.05
+28/03/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 571257 TO 012525576016945 EFFECTIVE DATE 27 MAR 2011 100.00 2,048.05
+28/03/2011 NON-ANZ ATM COBARGO HOTEL MOTEL* CO COBARGO 0 INCLUDES ATM OPERATOR CHARGE $2.50 102.50 1,945.55
+01/04/2011 ANZ INTERNET BANKING BPAY NRMA MEMBERSHIP {633490} 95.60 1,849.95
+04/04/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 587927 TO 4564621004504836 607.02 1,242.93
+05/04/2011 PAY/SALARY FROM NGH NGH PAY 660.25 1,903.18
+05/04/2011 ANZ INTERNET BANKING BPAY CAPITAL PATHOLOGY {134801} 57.70 1,845.48
+06/04/2011 EFTPOS CANNING ST SURGERY BEGA AU 60.00 1,785.48
+07/04/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 407581 TO CSA OFFICIAL RECEIP 216.67 1,568.81
+12/04/2011 CALTEX 22714 BEGA DEPOT NSW 50.33 1,518.48
+19/04/2011 PAY/SALARY FROM NGH NGH PAY 791.00 2,309.48
+19/04/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 756567 TO CSA OFFICIAL RECEIP 250.40 2,059.08
+27/04/2011 TRANSFER FROM RYAN W & RYAN J 70.00 2,129.08
+27/04/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 666597 TO 012525576016945 100.00 2,029.08
+
+29/04/2011 ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {508248} 94.07 1,935.01
+02/05/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 553066 TO 4564621004504836 947.43 987.58
+03/05/2011 PAY/SALARY FROM NGH NGH PAY 1,275.00 2,262.58
+09/05/2011 CALTEX 22714 BEGA DEPOT NSW 50.37 2,212.21 
+09/05/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 660033 TO CSA OFFICIAL RECEIP 216.67 1,995.54
+10/05/2011 EFTPOS SWINGER HILL SUPER MARKET MAWSON ACT 133.99 1,861.55
+11/05/2011 ANZ ATM GOSFORD WEST CALTEX #1 GOSFORD WEST NS 200.00 1,661.55
+17/05/2011 PAY/SALARY FROM NGH NGH PAY 300.00 1,961.55
+23/05/2011 EFTPOS KANWAL IGA KANWAL NSW01 EFFECTIVE DATE 21 MAY 2011 136.55 1,825.00
+26/05/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 398486 TO TATHRA CHILDRENS SERV 110.00 1,715.00
+27/05/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 973915 TO 012525576016945 100.00 1,615.00
+31/05/2011 PAY/SALARY FROM NGH NGH PAY 400.00 2,015.00
+31/05/2011 ANZ INTERNET BANKING BPAY BVSC - RATES {685545} 208.00 1,807.00
+01/06/2011 ANZ ATM BEGA BRANCH BEGA NS 200.00 1,607.00
+01/06/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 381249 TO 4564621004504836 1,100.14 506.86
+07/06/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 435290 TO CSA OFFICIAL RECEIP 216.67 290.19
+14/06/2011 PAY/SALARY FROM NGH NGH PAY 250.00 540.19
+
+
+
+2011
+24/06/2011 OPENING BALANCE 540.19
+27/06/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 644838 TO 012525576016945 100.00 440.19
+28/06/2011 PAY/SALARY FROM NGH NGH PAY 948.50 1,388.69
+04/07/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 605587 TO 4564621004504836 1,195.32 193.37
+12/07/2011 PAY/SALARY FROM NGH NGH PAY 845.00 1,038.37
+18/07/2011 ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {957177} 233.64 804.73
+
+
+2011
+25/07/2011 OPENING BALANCE 804.73
+26/07/2011 PAY/SALARY FROM NGH NGH PAY 1,449.00 2,253.73
+27/07/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 529536 TO 012525576016945 100.00 2,153.73
+01/08/2011 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 31 JUL 2011 45.01 2,108.72
+01/08/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 310540 TO 4564621004504836 490.22 1,618.50
+04/08/2011 EFTPOS AUST POST BEGA 3 NS W 226368 125.90 1,492.60
+08/08/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 757238 TO CSA OFFICIAL RECEIP EFFECTIVE DATE 07 AUG 2011 216.67 1,275.93
+09/08/2011 PAY/SALARY FROM NGH NGH PAY 1,357.50 2,633.43
+10/08/2011 VISA DEBIT PURCHASE CARD 3026 BEGA AGRICULTURAL SERVICE BEGA 103.20 2,530.23
+11/08/2011 ANZ INTERNET BANKING BPAY BVSC - RATES {115748} 857.69 1,672.54
+12/08/2011 VISA DEBIT PURCHASE CARD 3026 CALTEX BEGA BEGA EFFECTIVE DATE 10 AUG 2011 51.15 1,621.39
+18/08/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 779737 TO CSA OFFICIAL RECEIP 216.67 1,404.72
+23/08/2011 ANZ INTERNET BANKING TRANSFER NGH PAY NGH ENVIRONMENTA 701.75 2,106.47
+29/08/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 632807 TO 012525576016945 100.00 2,006.47
+
+
+01/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 177087 TO 4564621004504836 1,094.53 911.94
+06/09/2011 ANZ INTERNET BANKING TRANSFER NGH PAY NGH ENVIRONMENTA 237.50 1,149.44
+07/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 220031 TO CSA OFFICIAL RECEIP 216.67 932.77
+08/09/2011 CALTEX 22714 BEGA DEPOT NSW 46.39 886.38
+12/09/2011 EFTPOS COLES BEGA NSW AU EFFECTIVE DATE 11 SEP 2011 188.65 697.73
+13/09/2011 EFTPOS REPCO 012001 PHILLIP 3.99 693.74
+14/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 791073 FROM 576016945 819.29 1,513.03
+14/09/2011 NON-ANZ ATM CBA ATM WESTON B A ACT 291202 INCLUDES ATM OPERATOR CHARGE $2.00 1,002.00 511.03
+15/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 728505 TO TATHRA CHILDRENS SERV 110.00 401.03
+20/09/2011 ANZ INTERNET BANKING TRANSFER NGH PAY NGH ENVIRONMENTA 771.50 1,172.53
+20/09/2011 EFTPOS GO LO 522 BEGA 122.23 1,050.30
+
+
+2011
+23/09/2011 OPENING BALANCE 1,050.30
+27/09/2011 CALTEX 22714 BEGA DEPOT NSW 57.48 992.82 
+27/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 581441 TO 012525576016945 100.00 892.82
+03/10/2011 ANZ INTERNET BANKING BPAY COUNTRY ENERGY 1 {618831} EFFECTIVE DATE 02 OCT 2011 264.83 627.99
+04/10/2011 ANZ INTERNET BANKING TRANSFER NGH PAY NGH ENVIRONMENTA 550.50 1,178.49
+05/10/2011 DIVIDEND FROM IAG DIV OCT11/01246700 23.80 1,202.29
+07/10/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 402126 TO CSA OFFICIAL RECEIP 216.67 985.62
+10/10/2011 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 08 OCT 2011 49.86 935.76
+14/10/2011 ANZ ATM BEGA BRANCH BEGA NS 200.00 735.76
+17/10/2011 CALTEX 22714 BEGA DEPOT NSW EFFECTIVE DATE 15 OCT 2011 30.28 705.48
+18/10/2011 ANZ INTERNET BANKING TRANSFER NGH PAY NGH ENVIRONMENTA 990.00 1,695.48
+27/10/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 694413 TO 012525576016945 100.00 1,595.48
+01/11/2011 ANZ INTERNET BANKING TRANSFER NGH PAY NGH ENVIRONMENTA 948.00 2,543.48
+01/11/2011 CALTEX 22714 BEGA DEPOT NSW 55.72 2,487.76
+01/11/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 288928 TO 4564621004504836 695.98 1,791.78
+
+
+
+</textarea>
+
+<textarea id='savertransactions'  class='importdatasource' data-name='anz saver transactions' >
+2009
+21/05/2009 OPENING BALANCE 175.26
+27/05/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 184883 FROM 562864652 100.00 275.26
+19/06/2009 BONUS CREDIT INTEREST PAID 0.44 275.70
+22/06/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 851868 TO DANIEL AND VICKIE WIL 51.00 224.70
+23/06/2009 ANZ INTERNET BANKING BPAY TELSTRA BILL PAYME {855243} 11.01 213.69
+29/06/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 916167 FROM 562864652 EFFECTIVE DATE 27 JUN 2009 100.00 313.69
+29/06/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 452911 TO 012525562864652 313.69 0.00
+27/07/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 847876 FROM 562864652 100.00 100.00
+21/08/2009 CREDIT INTEREST PAID 0.01 100.01
+21/08/2009 BONUS CREDIT INTEREST PAID 0.15 100.16
+
+2009
+21/08/2009 OPENING BALANCE 100.16
+27/08/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 447415 FROM 562864652 100.00 200.16
+21/09/2009 BONUS CREDIT INTEREST PAID 0.33 200.49
+28/09/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 786317 FROM 562864652 EFFECTIVE DATE 27 SEP 2009 100.00 300.49
+05/10/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 898775 TO 4564621004504836 EFFECTIVE DATE 03 OCT 2009 300.00 0.49
+27/10/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 729730 FROM 562864652 100.00 100.49
+20/11/2009 BONUS CREDIT INTEREST PAID 0.19 100.68
+
+2009
+20/11/2009 OPENING BALANCE 100.68
+27/11/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 960582 FROM 562864652 100.00 200.68
+21/12/2009 BONUS CREDIT INTEREST PAID 0.48 201.16
+29/12/2009 ANZ INTERNET BANKING FUNDS TFER TRANSFER 262959 FROM 562864652 EFFECTIVE DATE 27 DEC 2009 100.00 301.16
+2010
+21/01/2010 BONUS CREDIT INTEREST PAID 0.80 301.96
+27/01/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 485580 FROM 562864652 100.00 401.96
+19/02/2010 CREDIT INTEREST PAID 0.01 401.97
+19/02/2010 BONUS CREDIT INTEREST PAID 1.01 402.98
+
+2010
+19/02/2010 OPENING BALANCE 402.98
+01/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 207974 FROM 562864652 EFFECTIVE DATE 27 FEB 2010 100.00 502.98
+19/03/2010 BONUS CREDIT INTEREST PAID 1.27 504.25
+22/03/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 375787 TO 012525562864652 EFFECTIVE DATE 20 MAR 2010 504.25 0.00
+27/04/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 863661 FROM 562864652 100.00 100.00
+21/05/2010 BONUS CREDIT INTEREST PAID 0.31 100.31
+
+
+2010
+21/05/2010 OPENING BALANCE 100.31
+27/05/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 711472 FROM 562864652 100.00 200.31
+21/06/2010 BONUS CREDIT INTEREST PAID 0.73 201.04
+28/06/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 643665 FROM 562864652 EFFECTIVE DATE 27 JUN 2010 100.00 301.04
+21/07/2010 BONUS CREDIT INTEREST PAID 1.09 302.13
+27/07/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 192289 FROM 562864652 100.00 402.13
+20/08/2010 CREDIT INTEREST PAID 0.01 402.14 
+20/08/2010 BONUS CREDIT INTEREST PAID 1.49 403.63
+
+2010
+20/08/2010 OPENING BALANCE 403.63
+27/08/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 412703 FROM 562864652 100.00 503.63
+21/09/2010 BONUS CREDIT INTEREST PAID 2.01 505.64 
+27/09/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 474605 FROM 562864652 100.00 605.64
+21/10/2010 CREDIT INTEREST PAID 0.01 605.65
+21/10/2010 BONUS CREDIT INTEREST PAID 2.29 607.94
+27/10/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 495281 FROM 562864652 100.00 707.94
+19/11/2010 BONUS CREDIT INTEREST PAID 2.90 710.84
+
+2010
+19/11/2010 OPENING BALANCE 710.84
+29/11/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 569674 FROM 562864652 EFFECTIVE DATE 27 NOV 2010 100.00 810.84
+09/12/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 942574 TO PETER RICHE 145.00 665.84
+21/12/2010 CREDIT INTEREST PAID 0.01 665.85
+29/12/2010 ANZ INTERNET BANKING FUNDS TFER TRANSFER 421648 FROM 562864652 EFFECTIVE DATE 27 DEC 2010 100.00 765.85
+
+2011
+10/01/2011 CARD ENTRY AT BEGA BRANCH 760.00 5.85
+27/01/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 231979 FROM 562864652 100.00 105.85
+21/02/2011 BONUS CREDIT INTEREST PAID 0.44 106.29
+
+2011
+21/02/2011 OPENING BALANCE 106.29
+28/02/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 927728 FROM 562864652 EFFECTIVE DATE 27 FEB 2011 100.00 206.29
+21/03/2011 BONUS CREDIT INTEREST PAID 0.85 207.14
+28/03/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 571257 FROM 562864652 EFFECTIVE DATE 27 MAR 2011 100.00 307.14
+21/04/2011 CREDIT INTEREST PAID 0.01 307.15
+21/04/2011 BONUS CREDIT INTEREST PAID 1.47 308.62
+27/04/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 666597 FROM 562864652 100.00 408.62
+20/05/2011 BONUS CREDIT INTEREST PAID 1.85 410.47
+
+
+2011
+20/05/2011 OPENING BALANCE 410.47
+27/05/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 973915 FROM 562864652 100.00 510.47
+21/06/2011 BONUS CREDIT INTEREST PAID 2.57 513.04
+27/06/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 644838 FROM 562864652 100.00 613.04
+21/07/2011 CREDIT INTEREST PAID 0.01 613.05 
+21/07/2011 BONUS CREDIT INTEREST PAID 2.92 615.97
+27/07/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 529536 FROM 562864652 100.00 715.97
+19/08/2011 BONUS CREDIT INTEREST PAID 3.32 719.29
+
+
+2011
+19/08/2011 OPENING BALANCE 719.29 29 AUG ANZ INTERNET BANKING FUNDS TFER TRANSFER 632807 FROM 562864652 100.00 819.29
+14/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 791073 TO 012525562864652 819.29 0.00
+21/09/2011 CREDIT INTEREST PAID 0.01 0.01
+27/09/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 581441 FROM 562864652 100.00 100.01
+21/10/2011 BONUS CREDIT INTEREST PAID 0.40 100.41
+27/10/2011 ANZ INTERNET BANKING FUNDS TFER TRANSFER 694413 FROM 562864652 100.00 200.41
+21/11/2011 BONUS CREDIT INTEREST PAID 0.91 201.32
+</textarea>

@@ -1,0 +1,72 @@
+<!-- required for pdf rendering >
+<script type="text/javascript" src="jspdf.js"></script>
+<script type="text/javascript" src="FileSaver.js"></script>
+<script type="text/javascript" src="BlobBuilder.js"></script>
+<script type="text/javascript" src="jspdf.plugin.addimage.js"></script>
+<script type="text/javascript" src="jspdf.plugin.ie_below_9_shim.js"></script>
+<script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script-->
+
+
+<div id='sharemanager' class='activatable' >
+		<ul>
+			<li class='menuitem'><a href="#sharemenu"><img src='images/android_share.png' height='30px'><span>Export</span></a></li>
+		    <li class='menuitem'><a href="#importmanager"><img src='images/coins.png' height='30px'><span>Import</span></a></li>
+		</ul>
+		<div id='sharemenu' >
+			<div class='activatable' id='importexportmanager' data-table='transactions' style='display:none;' ></div>
+			<div data-format='json'><h3>JSON </h3>
+				<a href='#' data-target='textarea' class='shareexportbutton'  >Copy/Paste</a>
+				<a href='#' data-target='file' class='shareexportbutton'  >Download</a>
+				<a href='#' data-target='email' class='shareexportbutton'  >Email</a>
+			</div>
+			<div  data-format='sql'><h3>SQL </h3>
+				<a href='#' data-target='textarea' class='shareexportbutton'  >Copy/Paste</a>
+				<a href='#' data-target='file' class='shareexportbutton'  >Download</a>
+				<a href='#' data-target='email' class='shareexportbutton'  >Email</a></li>
+			</div>
+			<div data-format='csv'><h3>CSV</h3>
+				<a href='#' data-target='textarea' class='shareexportbutton'  >Copy/Paste</a>
+				<a href='#' data-target='file' class='shareexportbutton'  >Download</a>
+				<a href='#' data-target='email' class='shareexportbutton'  >Email</a></li>
+			</div>
+			<div data-format='tsv'><h3>TSV </h3>
+				<a href='#' data-target='textarea' class='shareexportbutton'  >Copy/Paste</a>
+				<a href='#' data-target='file' class='shareexportbutton'  >Download</a>
+				<a href='#' data-target='email' class='shareexportbutton'  >Email</a>
+			</div>
+		</div>
+		<div id='importmanager'  class='activatable' >
+			<form>
+				<div id='importoptions' >
+					<id='importas' >Import As&nbsp;<select id='importasselect' ><option value='json' selected>JSON</option><option value='sql' >SQL</option><option value='csv' >CSV</option><option value='tsv' >TSV</option><option value='anz'  >ANZ</option><option value='anzcc' >ANZ Credit Card</option></select>
+					</span>
+					<span id='importto' >Import&nbsp;<select id='importtoselect' ><option value='all' >All Records</option></select>
+					</span>
+					<span id='importtoaccount' >Account&nbsp;<select ></select>
+					</span>
+					<span id='importfromdata' >Import From &nbsp;<select ><option='Import Source Below'></option></select>
+					</span>
+
+					<span id='importmessage' ></span>
+					<input type='submit' value='Import' id='importnowbutton' style='display: none'  />
+					
+				</div>
+				<div id='importsource' >
+					<div id='importfile'><!--input type='radio' name='import' id='importtextdisabler' checked -->Drag and Drop or <input type='file' id='importfileselector' value='Select' /></div>
+					<div id='importtextarea' >
+						<!--input type='radio' id='importtextenabler' name='import' value='1'-->
+						<label for='importtextenabler' >Or paste text below</label><br/>
+						<textarea id='importtext' ></textarea>
+					</div>
+				</div>
+			</form>
+				<!--input id='importbutton' type='submit' value='Import' />
+				<input id='finaliseimportbutton' type='submit' value='Finalise Import' style='display:none'/>
+				<input id='cancelimportbutton' type='submit' value='Cancel' style='display:none' />
+				<span id='importstatusmessage' >Import Pending</span>
+				
+			</div>
+			
+		</div>
+
+</div>
