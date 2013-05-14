@@ -2,19 +2,32 @@
 $relPath='../../'; 
 include "../../template/template_start.php" 
 ?>
+<link rel="stylesheet" href="../../../lib/jquery-ui/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="../../../lib/speechify/jquery.speechify.css" type="text/css" media="all" />
 
 <script src="../../../lib/jquery.js" type="text/javascript"></script>
-<link rel="stylesheet" href="../../../lib/jquery-ui/jquery-ui.css" type="text/css" media="all" />
 <script src="../../../lib/jquery-ui.js" type="text/javascript"></script>
-<script src="../../../lib/jquery.speechify.js" type="text/javascript"></script>
-
+<script src="../../../lib/speechify/jquery.speechify.js" type="text/javascript"></script>
+<script>
+$.fn.speechify.relPath='../../../lib/speechify/';
+</script>
+<script src="../../../lib/speechify/lib/speak.js/speakClient.js" type="text/javascript"></script>
+<script>
+$(document).ready(function() {
+	$('#content').speechify();
+	$('#sayitbutton').click(function() {
+		$.fn.speechify.say($('#sayit').val());
+		return false;
+	})
+});
+</script>
 		<div id="intro" >		
 		<h1>10/05/2013 Speech Recognition Jquery Style</h1>
-		<p>The latest versions of chrome make speech recognition available through javascript objects. Members of the Chrome team have put together a <a href='https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html' target='_new' >W3C draft</a> outlining an API and have implemented some of the API already from version 25 of Chrome Browser for desktop. 
-		To make it easy to add speech to existing sites I've written a jQuery plugin <b>jquery.speechify.js</b>. 
-		With HTML5 as a cross platform development environment, the possibilities and challenges of working with various input availabilities are exciting.
+		<p>The latest versions of chrome make speech recognition available through javascript objects. Members of the Chrome team have put together a <a href='https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html' target='_new' >W3C draft</a> outlining an API and have implemented some of the API already from version 25 of Chrome Browser for desktop. </p><p>
+		To make it easy to add speech to existing sites I've written a jQuery plugin <b>jquery.speechify.js</b>. </p>
+		<p>With HTML5 as a cross platform development environment, the possibilities and challenges of working with various input availabilities are exciting.
 		Where speech is available, workflows could be optimised to minimise speech recognition options ensuring accuracy.
-		The childrens games software industry is great inspiration for one direction voice, telling kids what to click.
+		</p><p>The childrens games software industry is great inspiration for one direction voice, telling kids what to click.
 		Now we can do games and applications where we go both ways !! In the browser !!!!! Thanks Google.
 		</div>
 
@@ -22,7 +35,7 @@ include "../../template/template_start.php"
 		<h3>About the plugin</h3>
 		The plugin is called with DOM context in the typical style
 		<pre>
-		$('body').speechify({commands:{'do stuff':function() {console.log('busy doing');}}});
+$('body').speechify({commands:{'do stuff':function() {console.log('busy doing');}}});
 		</pre>
 		The plugin provides various assistance.
 		<ul>
@@ -34,10 +47,25 @@ include "../../template/template_start.php"
 			<li>It adds a microphone on/off button in the top right of the window</li>
 			<li>It binds focus events to inputs,textareas and contenteditables to restart voice recognition</li>	
 		</ul>
-		The plugin also provides a public method speak to convert text to speech audio.
+		The plugin also leverages <b>speak.js</b> provide a public method speak to convert text to speech audio without a network request.
 		<pre>
-		$.fn.speechify.speak('short sentence');
+$.fn.speechify.speak('short sentence');
 		</pre>
+		<textarea id='sayit' ></textarea><input type='submit' id='sayitbutton' >
+		</div>
+		
+		<div id='texttospeech' >
+		
+<pre>
+http://translate.google.com/translate_tts?tl=en&q=testing
+b=new Audio('http://translate.google.com/translate_tts?tl=en&q=testing'); 
+b.load();
+b.addEventListener("load", function() { 
+  b.play(); 
+  console.log('ddd');
+}  
+$('body').append($('<!--iframe src="http://translate.google.com/translate_tts?tl=en&q=whatami" -->'));
+</pre>
 		</div>
 	
 		<div id='apibasics' >
@@ -80,18 +108,7 @@ speechRecognitionHandler.onend = function(e){
 			http://www.w3.org/TR/nl-spec/   Natural Language Semantics Markup Language for the Speech Interface Framework
 		<a href='http://translate.google.com/translate_tts?tl=en&q=testing'>Testing</a>
 http://www.jtalkplugin.com/#instructions_server
-
 https://github.com/kripken/speak.js
 
-
-
-	http://translate.google.com/translate_tts?tl=en&q=testing
-b=new Audio('http://translate.google.com/translate_tts?tl=en&q=testing'); 
-b.load();
-b.addEventListener("load", function() { 
-  b.play(); 
-  console.log('ddd');
-}  
-$('body').append($('<iframe src="http://translate.google.com/translate_tts?tl=en&q=whatami" >'));
 </div>
 <?php include "../template/template_end.php" ?>
