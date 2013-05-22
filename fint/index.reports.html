@@ -1,3 +1,20 @@
+<script src="lib/d3.v2.min.js"></script>
+<script src="lib/jquery.zoomablesunburst.js"></script>
+<style>
+
+path {
+  stroke: #fff;
+  fill-rule: evenodd;
+}
+#vis {
+	width:600px;
+	height: 500px;
+}
+#vis svg text {
+	font-size:0.8em;
+	text-shadow:none;
+}
+</style>
 <div id='reports'   class='activatable'>	
 		<!-- tab list -->
 		<ul>
@@ -30,7 +47,9 @@
 			<li><b>Taxable Income $4000</b></li>
 		</ul>
 		</div>
-		<div id='personalsummary' class='activatable'><h4>Personal Finance Summary</h4>
+		<div id='personalsummary' class='activatable'><h4>Personal Finance Summaries</h4>
+			<div id='reportsmanager'  class='disactivatable'  data-table='tags' data-view='reportsview' ></div>
+			AAA<div id='vis' >vis here</div>CCCDDS
 			<img class='chart' src='images/piechart.jpg' style='float:right' />
 		
 			<ul>

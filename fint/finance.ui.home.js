@@ -13,15 +13,16 @@ FintUI.initFunctions.home=function()  {
 	$('.homewidget h3').click(function() {
 		finance.home.toggleHomeWidget(this);
 	});
-	// preload help ??
 	$('#content').tabs('load',4);
+	// preload help ??
 	//$("#homerightcol").accordion();
 	// one click import sample data
 	$('#homeimportsomedata').click(function() {
 		//$('#content').tabs({load : function(){alert('activs'); }});
 		$('#content').tabs('option','active','4');
 		$('#sharemanager').tabs('option','active','1');
-		$('#importtext').val($('#allrecoardsjson').val());
+		console.log('ALLRECS',$('#allrecordsjson').val());
+		$('#importtext').val($('#allrecordsjson').val());
 		$('#importtext').keyup();
 	});
 }
@@ -124,7 +125,7 @@ console.log('init hometransactionmanagersearch');
 			//var query="select rules.rowid,rules.name,tags.name from rules left join tags on tags.rowid=rules.tags where '"+$('.list-field-description',this).text()+"' match rules.filtertext ";
 			//console.log(query);
 			setTimeout(function() {
-				console.log('do timeout');
+				//console.log('do timeout');
 			//return;
 				var combinedTags={};
 				$.each($('.list-field-selectedtags .join-value',thisRow),function() {
@@ -143,7 +144,7 @@ console.log('init hometransactionmanagersearch');
 					//console.log('ROWIDrules',$(this).data('join-rowid'));
 				});
 				var finalTags=[];
-				console.log('combinedTags',combinedTags);
+			//	console.log('combinedTags',combinedTags);
 				$.each(combinedTags,function(tagId,tagMeta) {
 					//console.log('renTAGS',tagId,tagMeta);
 					var buttons=[];
@@ -155,8 +156,8 @@ console.log('init hometransactionmanagersearch');
 					//console.log('buttons',buttons);
 					finalTags.push('<span class="join-value'+tagMeta.selectedText+tagMeta.suggestedText+'" data-join-rowid="'+tagId+'">'+tagMeta.label+buttons.join("")+'</span>');
 				});
-				if (finalTags.length>0) console.log('finalTags',finalTags);
-				else console.log('notags');
+				//if (finalTags.length>0) console.log('finalTags',finalTags);
+				//else console.log('notags');
 				$('.list-field-selectedtags',thisRow).html(finalTags.join(""));
 				$('.list-field-ruleswithtags').hide();
 				$('.list-field-status').hide();
@@ -200,6 +201,7 @@ FintUI.activateFunctions.homeaccountsmanager=function(settings)  {
 FintUI.initFunctions.homecategoriesmanager=function(settings)  {
 	console.log('init homecategoriesmanager');
 	var plugin=$('#homecategoriesmanager').quickDB(settings)[0];
+	plugin.settings.formTarget=$('#homemaincol');
 	plugin.settings.templates.listRow = "<tr><td><input type='checkbox' checked class='listrowcheckbox'  data-rowid='${rowid}' />${listButtons}</td>${listFields}</tr>";
 	plugin.settings.templates.listHeaders = "<tr><th><input type='checkbox' checked class='listrowtoggleall'/>${listHeaderButtons}</th>${listHeaders}</tr>";
 	plugin.settings.templates.listCollateItemWrap = "<div ><h3><input type='checkbox' checked class='listrowtogglecollated'/>${collateValue}</h3>${list}</div>";

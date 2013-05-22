@@ -1,7 +1,25 @@
 TODO
+
+BUGS
+
+
+GRAPHING
+
+
+hightlight error lines (balance check)
+
+remove all buttons in favor of right click/double click or long press
+
+
+
 restore existing admin and categorise functions
+
 graphing
 
+expenses/income totals
+select from categories where parent = <param> join 
+OR 
+use transactions view (without rules tags) and categorise 
 
 
 !TECH NOTES

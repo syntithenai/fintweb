@@ -27,6 +27,8 @@ $.fn.quickDB.defaultOptions.tables={
 	tags:{
 		fields: {
 			name: {type:'text',label:'Tag',validation:{required:true}},
+			isBudget: {type:'checkbox',label:'Budget'},
+			budgetMonthlyTarget: {type:'text',label:'Monthly Budget Amount',requires:'isBudget'},
 		},
 		joins:{
 			parenttags:{
@@ -142,6 +144,22 @@ $.fn.quickDB.defaultOptions.tables={
 						[
 							{value:'all',label:'All',sqlSort:'date desc',sql:'(transactions_list.status > 0 or (1=1))'},
 							{value:'pending',label:'TODO',sql:'((1=1) or (transactions_list.status <= 0 or transactions_list.status is null))',sqlSort:'ruleswithtags, selectedtags'}
+						]
+					},
+					account: {label:'Account', type: 'livesearch',fields:'accounts',hidde:true}
+				}
+			},
+			shortlist: {
+				joins: "accounts,selectedtags,banks,ruleswithtags",
+				fields: "accounts.name||' '||accounts.number as accounts,accounts.rowid as _accounts_ids,transactions.date,transactions.description,transactions.amount,transactions.balance,group_concat(selectedtags.name) as selectedtags,group_concat(selectedtags.rowid) as _selectedtags_ids, transactions.status status",
+				groupBy: "transactions.rowid",
+				searchers: {
+					name: {label:'Search', type: 'text','fields':'description'},
+					date: {label:'Date', type: 'date','fields':'date'},
+					type: {label:'', type: 'radio',dfields:'status',options:
+						[
+							{value:'all',label:'All',sqlSort:'date desc',sql:'(transactions_list.status > 0 or (1=1))'},
+							{value:'pending',label:'TODO',sql:'_selected_tags_ids=null',sqlSort:'ruleswithtags, selectedtags'}
 						]
 					},
 					account: {label:'Account', type: 'livesearch',fields:'accounts',hidde:true}
