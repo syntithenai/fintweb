@@ -1,3 +1,12 @@
+/*
+
+select coalesce(substr(tags.name,0,length(tags.name)*tags.isBudget+1),substr(parenttags.name,0,length(parenttags.name)*parenttags.isBudget+1),substr(parentparenttags.name,0,length(parentparenttags.name)*parentparenttags.isBudget+1),substr(parentparentparenttags.name,0,length(parentparentparenttags.name)*parentparentparenttags.isBudget+1)) thetagname ,coalesce(parentparentparenttags.isBudget*parentparentparenttags.rowid,parentparenttags.isBudget*parentparenttags.rowid,parenttags.isBudget*parenttags.rowid,tags.isBudget*tags.rowid) thetag, sum(amount),strftime('%m/%Y',date) dm,strftime('%Y/%m',date) dmr,tags.name tag,tags.rowid as tagid,tags.isBudget budget,parenttags.name as pname,parenttags.isBudget as pib,parentparenttags.name as ppname,parentparenttags.isBudget as ppib,parentparentparenttags.name as pppparent,parentparentparenttags.isBudget as pppib from transactions left join tags,mm_transactionstags on transactions.rowid=mm_transactionstags.transactions and tags.rowid=mm_transactionstags.tags left join tags parenttags on tags.parenttags=parenttags.rowid   left join tags parentparenttags on parenttags.parenttags=parentparenttags.rowid    left join tags parentparentparenttags on parentparenttags.parenttags=parentparentparenttags.rowid where    parentparentparenttags.isBudget=1 or parentparenttags.isBudget=1 or parenttags.isBudget=1 or   tags.isBudget=1 group by dm,thetag order by dmr desc,thetagname limit 50;
+
+
+coalesce(substr(tags.name,0,length(tags.name)*tags.isBudget+1),substr(parenttags.name,0,length(parenttags.name)*parenttags.isBudget+1),substr(parentparenttags.name,0,length(parentparenttags.name)*parentparenttags.isBudget+1),substr(parentparentparenttags.name,0,length(parentparentparentags.name)*parentparentparenttags.isBudget+1));
+
+*/
+
 $.fn.quickDB.defaultOptions.tables={		
 	rules:{
 		fields: {
@@ -27,7 +36,7 @@ $.fn.quickDB.defaultOptions.tables={
 	tags:{
 		fields: {
 			name: {type:'text',label:'Tag',validation:{required:true}},
-			isBudget: {type:'checkbox',label:'Budget'},
+			isBudget: {type:'boolean',label:'Use For Budgeting?'},
 			budgetMonthlyTarget: {type:'text',label:'Monthly Budget Amount',requires:'isBudget'},
 		},
 		joins:{
@@ -41,7 +50,8 @@ $.fn.quickDB.defaultOptions.tables={
 			label: { joins:'',fields:"tags.name as label",orderBy:'label' }, 
 			default: { joins:'parenttags',fields:"','||GROUP_CONCAT(parenttags.rowid,',')||',' as _parenttags_ids,tags.name as name, GROUP_CONCAT(parenttags.name,',') as parenttags",groupBy:"tags.rowid",orderBy:'parenttags,name',searchers: {
 				name: {label:'', type: 'text','fields':'tags.name,parenttags.name'},
-			} }
+			} },
+			form: { joins:'parenttags',fields:"','||GROUP_CONCAT(parenttags.rowid,',')||',' as _parenttags_ids,tags.name as name, GROUP_CONCAT(parenttags.name,',') as parenttags,tags.isBudget isBudget,tags.budgetMonthlyTarget budgetMonthlyTarget",groupBy:"tags.rowid",orderBy:'parenttags,name'}
 		}
 	},
 	ebankingsites: {

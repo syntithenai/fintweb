@@ -146,7 +146,7 @@ FintUI.initFunctions.sharemanager=function(settings)  {
 			});
 			
 		} else {
-			FintImportANZ().importNormalTransactions(text,function(entry) {
+			FintImportANZ().importCreditTransactions(text,function(entry) {
 				// save transaction
 				entry.accounts=$("#importtoaccount select").val();
 				console.log('REALIMPORT',entry);
